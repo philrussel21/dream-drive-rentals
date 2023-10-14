@@ -2,6 +2,7 @@ import {
   BenefitsSection,
   BookSection,
   Container,
+  FeaturedFleet,
   Hero,
   Region,
 } from '@app/components/partials';
@@ -26,6 +27,19 @@ const HomePage = (): JSX.Element => (
           subheading={homeData.benefits.subheading}
           heading={homeData.benefits.heading}
           benefits={homeData.benefits.benefits}
+        />
+      </Container>
+    </Region>
+    <Region>
+      <Container>
+        <FeaturedFleet
+          heading={homeData.featuredCars.heading}
+          subheading={homeData.featuredCars.subheading}
+          content={homeData.featuredCars.content}
+          cars={homeData.featuredCars.cars.map((car, index) => ({
+            ...car,
+            image: generateDatoTestImage(500, 'film', 1022 + index),
+          }))}
         />
       </Container>
     </Region>

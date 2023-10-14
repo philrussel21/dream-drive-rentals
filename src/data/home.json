@@ -34,5 +34,62 @@
         "icon": "trophy"
       }
     ]
+  },
+  "featuredCars": {
+    "subheading": "Vehicle models",
+    "heading": "Our rental fleet",
+    "content": "Choose from a variety of our amazing vehicles to rent for your next adventure or business trip.",
+    "cars": [
+      {
+        "id": "1",
+        "make": "Audi",
+        "model": "A1",
+        "price": 300,
+        "year": "2018",
+        "capacity": 5,
+        "transmission": "Automatic",
+        "fuel": "Petrol"
+      },
+      {
+        "id": "2",
+        "make": "Lamborghini",
+        "model": "Huracan",
+        "price": 1000,
+        "year": "2019",
+        "capacity": 2,
+        "transmission": "Automatic",
+        "fuel": "Petrol"
+      },
+      {
+        "id": "3",
+        "make": "Mercedes",
+        "model": "C63",
+        "price": 500,
+        "year": "2019",
+        "capacity": 5,
+        "transmission": "Automatic",
+        "fuel": "Petrol"
+      },
+      {
+        "id": "4",
+        "make": "Ferrari",
+        "model": "488",
+        "price": 1000,
+        "year": "2020",
+        "capacity": 2,
+        "transmission": "Automatic",
+        "fuel": "Petrol"
+      },
+      {
+        "id": "5",
+        "make": "Maserati",
+        "model": "Ghibli",
+        "price": 500,
+        "year": "2019",
+        "capacity": 2,
+        "transmission": "Automatic",
+        "fuel": "Petrol"
+      }
+    ]
   }
 }
