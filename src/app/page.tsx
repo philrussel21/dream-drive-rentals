@@ -6,9 +6,11 @@ import {
   FeaturedFleet,
   Hero,
   Region,
+  Testimonials,
   WhyUs,
 } from '@app/components/partials';
 import homeData from '@app/data/home.json';
+import testimonials from '@app/data/testimonials.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
 
 const HomePage = (): JSX.Element => (
@@ -62,6 +64,14 @@ const HomePage = (): JSX.Element => (
           perks={homeData.whyUs.perks}
         />
       </Container>
+    </Region>
+    <Region>
+      <Testimonials
+        heading={homeData.testimonials.heading}
+        subheading={homeData.testimonials.subheading}
+        content={homeData.testimonials.content}
+        testimonials={testimonials}
+      />
     </Region>
   </div>
 );
