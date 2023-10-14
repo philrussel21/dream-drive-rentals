@@ -1,8 +1,10 @@
 import {Inter} from 'next/font/google';
 import type {Metadata} from 'next';
 import {Header} from '@app/components';
-import headerData from '@app/data/header.json';
+import headerLinks from '@app/data/header.json';
+import footerData from '@app/data/footer.json';
 import './globals.css';
+import {Footer, Region} from '@app/components/partials';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -16,8 +18,17 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang="en">
       <body className={inter.className}>
         <main className="min-h-screen bg-black text-white">
-          <Header links={headerData} />
+          <Header links={headerLinks} />
           {children}
+          <Region>
+            <Footer
+              email={footerData.email}
+              phone={footerData.phone}
+              address={footerData.address}
+              links={headerLinks}
+              content={footerData.content}
+            />
+          </Region>
         </main>
       </body>
     </html>
