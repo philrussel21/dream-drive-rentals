@@ -20,7 +20,10 @@ const Hero = ({
   actions,
 }: HeroProperties): JSX.Element => (
   <section className="h-screen flex justify-center items-center">
-    <div className="flex space-x-4 container">
+    <div className="flex flex-col md:flex-row-reverse gap-4 container">
+      <div>
+        <Image data={heroImage} />
+      </div>
       <div className="flex flex-col justify-center">
         <span className="text-2xl">{subheading}</span>
         <h1 className="text-6xl">{heading}</h1>
@@ -39,9 +42,6 @@ const Hero = ({
             ))}
           </div>
         )}
-      </div>
-      <div>
-        <Image data={heroImage} />
       </div>
     </div>
   </section>
