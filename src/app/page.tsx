@@ -6,6 +6,7 @@ import {
   FeaturedFleet,
   Hero,
   Region,
+  WhyUs,
 } from '@app/components/partials';
 import homeData from '@app/data/home.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
@@ -50,6 +51,17 @@ const HomePage = (): JSX.Element => (
         content={homeData.callout.content}
         actions={homeData.callout.actions}
       />
+    </Region>
+    <Region>
+      <Container>
+        <WhyUs
+          heading={homeData.whyUs.heading}
+          subheading={homeData.whyUs.subheading}
+          content={homeData.whyUs.content}
+          image={generateDatoTestImage(900, 'hdtv', 1025)}
+          perks={homeData.whyUs.perks}
+        />
+      </Container>
     </Region>
   </div>
 );
