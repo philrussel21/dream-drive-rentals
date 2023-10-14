@@ -3,6 +3,7 @@ import {
   BookSection,
   Callout,
   Container,
+  FAQs,
   FeaturedFleet,
   Hero,
   Region,
@@ -11,6 +12,7 @@ import {
 } from '@app/components/partials';
 import homeData from '@app/data/home.json';
 import testimonials from '@app/data/testimonials.json';
+import faqs from '@app/data/faqs.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
 
 const HomePage = (): JSX.Element => (
@@ -72,6 +74,11 @@ const HomePage = (): JSX.Element => (
         content={homeData.testimonials.content}
         testimonials={testimonials}
       />
+    </Region>
+    <Region>
+      <Container isNarrow>
+        <FAQs heading="Frequently Asked Questions" faqs={faqs} />
+      </Container>
     </Region>
   </div>
 );
