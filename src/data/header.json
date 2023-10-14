@@ -1,0 +1,22 @@
+[
+  {
+    "label": "About",
+    "href": "/about"
+  },
+  {
+    "label": "Models",
+    "href": "/models"
+  },
+  {
+    "label": "Testimonials",
+    "href": "/testimonials"
+  },
+  {
+    "label": "Our Team",
+    "href": "/our-team"
+  },
+  {
+    "label": "Contact",
+    "href": "/contact"
+  }
+]
