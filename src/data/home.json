@@ -1,0 +1,17 @@
+{
+  "hero": {
+    "subheading": "Plan your trip now.",
+    "heading": "Save big with our car rental",
+    "synopsis": "Rent the car of your dreams. Unbeatable prices, unlimited miles, flexible pick-up options and much more.",
+    "actions": [
+      {
+        "label": "Book now",
+        "href": "/book"
+      },
+      {
+        "label": "Learn more",
+        "href": "/about"
+      }
+    ]
+  }
+}
