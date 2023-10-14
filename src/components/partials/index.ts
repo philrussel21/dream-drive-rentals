@@ -1,5 +1,6 @@
 export {default as BenefitsSection} from './benefits-section';
 export {default as BookSection} from './book-section';
+export {default as Callout} from './callout';
 export {default as Container} from './container';
 export {default as FeaturedFleet} from './featured-fleet';
 export {default as Footer} from './footer';

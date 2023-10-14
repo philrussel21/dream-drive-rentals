@@ -1,6 +1,7 @@
 import {
   BenefitsSection,
   BookSection,
+  Callout,
   Container,
   FeaturedFleet,
   Hero,
@@ -42,6 +43,13 @@ const HomePage = (): JSX.Element => (
           }))}
         />
       </Container>
+    </Region>
+    <Region>
+      <Callout
+        heading={homeData.callout.heading}
+        content={homeData.callout.content}
+        actions={homeData.callout.actions}
+      />
     </Region>
   </div>
 );

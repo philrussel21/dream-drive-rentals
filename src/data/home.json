@@ -91,5 +91,19 @@
         "fuel": "Petrol"
       }
     ]
+  },
+  "callout": {
+    "heading": "Book your car now",
+    "content": "We have the perfect car for your next adventure. Book now and save big.",
+    "actions": [
+      {
+        "label": "Book now",
+        "href": "/book"
+      },
+      {
+        "label": "Contact us",
+        "href": "/contact"
+      }
+    ]
   }
 }
