@@ -5,13 +5,14 @@ import {
   Container,
   FAQs,
   FeaturedFleet,
-  Hero,
+  HomeHero as Hero,
   Region,
   Testimonials,
   WhyUs,
 } from '@app/components/partials';
 import homeData from '@app/data/home.json';
 import testimonials from '@app/data/testimonials.json';
+import calloutData from '@app/data/callout.json';
 import faqs from '@app/data/faqs.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
 
@@ -51,9 +52,9 @@ const HomePage = (): JSX.Element => (
     </Region>
     <Region>
       <Callout
-        heading={homeData.callout.heading}
-        content={homeData.callout.content}
-        actions={homeData.callout.actions}
+        heading={calloutData.heading}
+        content={calloutData.content}
+        actions={calloutData.actions}
       />
     </Region>
     <Region>

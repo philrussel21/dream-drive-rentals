@@ -6,6 +6,7 @@ export {default as FAQs} from './faqs';
 export {default as FeaturedFleet} from './featured-fleet';
 export {default as Footer} from './footer';
 export {default as Hero} from './hero';
+export {default as HomeHero} from './home-hero';
 export {default as Region} from './region';
 export {default as Testimonials} from './testimonials';
 export {default as WhyUs} from './why-us';

@@ -20,15 +20,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <main className="min-h-screen bg-black text-white">
           <Header links={headerLinks} />
           {children}
-          <Region>
-            <Footer
-              email={footerData.email}
-              phone={footerData.phone}
-              address={footerData.address}
-              links={headerLinks}
-              content={footerData.content}
-            />
-          </Region>
+          <Footer
+            email={footerData.email}
+            phone={footerData.phone}
+            address={footerData.address}
+            links={headerLinks}
+            content={footerData.content}
+          />
         </main>
       </body>
     </html>
