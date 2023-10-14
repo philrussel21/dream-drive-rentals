@@ -1,8 +1,8 @@
-type Link = {
+type LinkType = {
   label: string;
   href: string;
 }
 
 export type {
-  Link
+  LinkType
 };
