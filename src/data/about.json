@@ -1,0 +1,45 @@
+{
+  "about": {
+    "subheading": "About Dream Drive Rentals",
+    "heading": "You start the engine and your adventure begins",
+    "content": "Welcome to Dream Drive Rentals, where luxury meets the open road. Our passion is turning your dream drives into reality. With an exclusive fleet of high-end vehicles, impeccable service, and a commitment to making every ride unforgettable, we invite you to experience the pinnacle of automotive elegance. Your journey begins here.",
+    "stats": [
+      {
+        "name": "Luxurious cars",
+        "value": 25,
+        "icon": "trophy"
+      },
+      {
+        "name": "Happy customers",
+        "value": 100,
+        "icon": "trophy"
+      },
+      {
+        "name": "Awards won",
+        "value": 15,
+        "icon": "trophy"
+      }
+    ]
+  },
+  "benefits": {
+    "subheading": "Plan your trip now",
+    "heading": "Quick and easy car rental",
+    "benefits": [
+      {
+        "title": "Dream cars",
+        "text": "We offer a big range of vehicles for all your driving needs. We have the perfect car to meet your needs",
+        "icon": "trophy"
+      },
+      {
+        "title": "Friendly operators",
+        "text": "Our operators are always ready to help you. We are available 24/7 to assist you with your booking.",
+        "icon": "trophy"
+      },
+      {
+        "title": "Multiple locations",
+        "text": "We have multiple locations all over Australia. You can pick up your car at any of our locations.",
+        "icon": "trophy"
+      }
+    ]
+  }
+}

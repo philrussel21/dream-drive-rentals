@@ -1,3 +1,4 @@
+export {default as AboutSection} from './about-section';
 export {default as BenefitsSection} from './benefits-section';
 export {default as BookSection} from './book-section';
 export {default as Callout} from './callout';
