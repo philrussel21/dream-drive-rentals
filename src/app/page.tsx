@@ -1,5 +1,10 @@
-import {BookSection, Container, Hero} from '@app/components/partials';
-import {cars, locations} from '@app/config';
+import {
+  BenefitsSection,
+  BookSection,
+  Container,
+  Hero,
+  Region,
+} from '@app/components/partials';
 import homeData from '@app/data/home.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
 
@@ -15,6 +20,15 @@ const HomePage = (): JSX.Element => (
     <Container>
       <BookSection heading="Book a car" />
     </Container>
+    <Region>
+      <Container>
+        <BenefitsSection
+          subheading={homeData.benefits.subheading}
+          heading={homeData.benefits.heading}
+          benefits={homeData.benefits.benefits}
+        />
+      </Container>
+    </Region>
   </div>
 );
 

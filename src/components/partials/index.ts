@@ -1,3 +1,4 @@
+export {default as BenefitsSection} from './benefits-section';
 export {default as BookSection} from './book-section';
 export {default as Container} from './container';
 export {default as Footer} from './footer';
