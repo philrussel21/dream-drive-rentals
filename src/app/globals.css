@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.headline,
+.heading-one {
+  @apply text-6xl font-semibold tracking-tight;
+}
+
+.heading-two,
+.markdown h2 {
+  @apply text-5xl font-semibold;
+}
+
+.heading-three,
+.heading-four,
+.markdown h3,
+.markdown h4 {
+  @apply text-3xl font-semibold;
+}
+
+.heading-five,
+.markdown h5,
+.heading-six,
+.markdown h6,
+.subheading {
+  @apply text-2xl font-medium;
+}
+
+.text-lead {
+  @apply text-xl font-medium;
+}
+
+.text-regular,
+.markdown p {
+  @apply text-base;
+}
+
+.text-small {
+  @apply text-sm;
+}

@@ -15,6 +15,7 @@ import testimonials from '@app/data/testimonials.json';
 import calloutData from '@app/data/callout.json';
 import faqs from '@app/data/faqs.json';
 import {generateDatoTestImage} from '@growthops/ext-ts';
+import {Heading, Text} from '@app/components';
 
 const HomePage = (): JSX.Element => (
   <div>
@@ -37,6 +38,21 @@ const HomePage = (): JSX.Element => (
         />
       </Container>
     </Region>
+    {/* <Region>
+      <Container>
+        <Heading label="Heading" variant="headline" />
+        <Heading label="Subheading" variant="subheading" />
+        <Heading label="Heading One" variant="heading-one" />
+        <Heading label="Heading Two" variant="heading-two" />
+        <Heading label="Heading Three" variant="heading-three" />
+        <Heading label="Heading Four" variant="heading-four" />
+        <Heading label="Heading Five" variant="heading-five" />
+        <Heading label="Heading Six" variant="heading-six" />
+        <Text variant="text-lead">Text lead</Text>
+        <Text variant="text-regular">Text regular</Text>
+        <Text variant="text-small">Text small</Text>
+      </Container>
+    </Region> */}
     <Region>
       <Container>
         <FeaturedFleet
