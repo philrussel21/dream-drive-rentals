@@ -2,9 +2,9 @@ import {Inter} from 'next/font/google';
 import type {Metadata} from 'next';
 import {Header} from '@app/components';
 import headerLinks from '@app/data/header.json';
-import footerData from '@app/data/footer.json';
+import contactData from '@app/data/contact.json';
 import './globals.css';
-import {Footer, Region} from '@app/components/partials';
+import {Footer} from '@app/components/partials';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -21,11 +21,11 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Header links={headerLinks} />
           {children}
           <Footer
-            email={footerData.email}
-            phone={footerData.phone}
-            address={footerData.address}
+            email={contactData.contact.email}
+            phone={contactData.contact.phone}
+            address={contactData.contact.address}
             links={headerLinks}
-            content={footerData.content}
+            content="We offer a big range of vehicles for all your driving needs. We have the perfect car to meet your needs."
           />
         </main>
       </body>
