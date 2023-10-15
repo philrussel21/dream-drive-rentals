@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Michael Scott",
+    "position": "Regional Manager"
+  },
+  {
+    "name": "Dwight Schrute",
+    "position": "Assistant to the Regional Manager"
+  },
+  {
+    "name": "Jim Halpert",
+    "position": "Sales Representative"
+  },
+  {
+    "name": "Pam Beesly",
+    "position": "Receptionist"
+  },
+  {
+    "name": "Stanley Hudson",
+    "position": "Sales Representative"
+  },
+  {
+    "name": "Phyllis Vance",
+    "position": "Sales Representative"
+  },
+  {
+    "name": "Toby Flenderson",
+    "position": "Human Resources"
+  },
+  {
+    "name": "Creed Bratton",
+    "position": "Quality Assurance"
+  },
+  {
+    "name": "David Wallace",
+    "position": "CFO"
+  }
+]
