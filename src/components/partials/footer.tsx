@@ -19,7 +19,7 @@ const Footer = ({
   address,
   links,
 }: FooterProperties): JSX.Element => (
-  <footer className="py-16 md:py-24 bg-gray-800 text-center lg:text-left">
+  <footer className="py-16 md:py-24 bg-brand-charcoal text-center lg:text-left">
     <Container>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-4 lg:gap-x-6 gap-y-6">
         <div className="space-y-6">

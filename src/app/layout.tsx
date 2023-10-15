@@ -17,7 +17,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="min-h-screen bg-black text-white">
+        <main className="min-h-screen bg-black text-brand-platinum">
           <Header links={headerLinks} />
           {children}
           <Footer

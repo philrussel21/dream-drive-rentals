@@ -14,7 +14,7 @@ const Callout = ({
   content,
   actions,
 }: CalloutProperties): JSX.Element => (
-  <div className="text-center bg-white text-black space-y-8 px-4 py-12">
+  <div className="text-center bg-brand-off-white text-black space-y-8 px-4 py-12">
     <h3>{heading}</h3>
     <p className="max-w-xl mx-auto">{content}</p>
     {isPopulated(actions) && (

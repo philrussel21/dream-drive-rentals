@@ -46,8 +46,8 @@ const baseClasses = collapse(`
 `);
 
 const variantClasses: Record<Variant, string> = {
-  primary: 'bg-gray-300 text-black',
-  secondary: 'bg-gray-800 text-white',
+  primary: 'bg-brand-gold text-black',
+  secondary: 'bg-brand-silver text-black',
 };
 
 const generateIcon = (
