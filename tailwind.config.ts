@@ -7,6 +7,10 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+		fontFamily: {
+			"display": "var(--font-playfair-display), sans-serif",
+			"body": "var(--font-lato), sans-serif",
+		},
     container: {
 			center: true,
 			padding: {

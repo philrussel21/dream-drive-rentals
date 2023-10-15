@@ -1,4 +1,4 @@
-import {Inter} from 'next/font/google';
+import {Playfair_Display, Lato} from 'next/font/google';
 import type {Metadata} from 'next';
 import {Header} from '@app/components';
 import headerLinks from '@app/data/header.json';
@@ -6,7 +6,16 @@ import contactData from '@app/data/contact.json';
 import './globals.css';
 import {Footer} from '@app/components/partials';
 
-const inter = Inter({subsets: ['latin']});
+const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair-display',
+});
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '300'],
+  variable: '--font-lato',
+});
 
 export const metadata: Metadata = {
   title: 'Dream Drive Rentals',
@@ -16,8 +25,8 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <main className="min-h-screen bg-black text-brand-platinum">
+      <body className={`${playfair_display.variable} ${lato.variable}`}>
+        <main className="min-h-screen bg-black text-brand-platinum font-body">
           <Header links={headerLinks} />
           {children}
           <Footer
