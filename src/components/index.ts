@@ -6,3 +6,4 @@ export {default as DateSelector} from './date-selector';
 export {default as Header} from './header';
 export {default as PerkCard} from './perk-card';
 export {default as Select} from './select';
+export {default as Testimonial} from './testimonial';

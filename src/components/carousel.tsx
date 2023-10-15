@@ -14,12 +14,12 @@ const Carousel = ({children}: CarouselProperties): JSX.Element => {
   const handleNextSlide = useCallback(() => {
     if (activeSlide === children.length - 1) return;
     setActiveSlide((activeSlide) => activeSlide + 1);
-  }, []);
+  }, [activeSlide]);
 
   const handlePreviousSlide = useCallback(() => {
     if (activeSlide === 0) return;
     setActiveSlide((activeSlide) => activeSlide - 1);
-  }, []);
+  }, [activeSlide]);
 
   return (
     <div className="flex justify-center space-x-10">

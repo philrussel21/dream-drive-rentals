@@ -1,5 +1,5 @@
 import {Container} from '.';
-import {Carousel} from '..';
+import {Carousel, Testimonial} from '..';
 
 type Testimonial = {
   name: string;
@@ -13,16 +13,6 @@ type TestimonialsProperties = {
   content: string;
   testimonials: Testimonial[];
 };
-
-const Testimonial = ({name, location, message}: Testimonial): JSX.Element => (
-  <div className="p-5 bg-white rounded-md max-w-md">
-    <p>{`"${message}"`}</p>
-    <div className="flex flex-col space-y-2 mt-4">
-      <span>{name}</span>
-      <span>{location}</span>
-    </div>
-  </div>
-);
 
 const Testimonials = ({
   heading,
@@ -40,7 +30,9 @@ const Testimonials = ({
       <div className="mt-6">
         <Carousel>
           {testimonials.map((testimonial) => (
-            <Testimonial {...testimonial} />
+            <div className="max-w-md">
+              <Testimonial {...testimonial} />
+            </div>
           ))}
         </Carousel>
       </div>
