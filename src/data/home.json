@@ -43,42 +43,62 @@
       {
         "id": "1",
         "make": "Audi",
-        "model": "A1",
+        "model": "S3",
         "price": 300,
-        "year": "2018",
+        "year": "2022",
         "capacity": 5,
         "transmission": "Automatic",
-        "fuel": "Petrol"
+        "fuel": "Petrol",
+        "image": {
+          "src": "/audi-s3.png",
+          "alt": "Audi S3",
+          "aspectRatio": 2.1
+        }
       },
       {
         "id": "2",
         "make": "Lamborghini",
-        "model": "Huracan",
+        "model": "Revuelto",
         "price": 1000,
-        "year": "2019",
+        "year": "2023",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol"
+        "fuel": "Petrol",
+        "image": {
+          "src": "/lambo-revuelto.png",
+          "alt": "Lamborghini Revuelto",
+          "aspectRatio": 1.7
+        }
       },
       {
         "id": "3",
         "make": "Mercedes",
-        "model": "C63",
+        "model": "EQE 300",
         "price": 500,
-        "year": "2019",
-        "capacity": 5,
+        "year": "2023",
+        "capacity": 4,
         "transmission": "Automatic",
-        "fuel": "Petrol"
+        "fuel": "Electric",
+        "image": {
+          "src": "/merc-eqe-300.png",
+          "alt": "Mercedes EQE 300",
+          "aspectRatio": 1.7
+        }
       },
       {
         "id": "4",
         "make": "Ferrari",
-        "model": "488",
+        "model": "Portofino",
         "price": 1000,
         "year": "2020",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol"
+        "fuel": "Petrol",
+        "image": {
+          "src": "/ferrari-portofino.png",
+          "alt": "Ferrari Portofino",
+          "aspectRatio": 2
+        }
       },
       {
         "id": "5",
@@ -88,7 +108,12 @@
         "year": "2019",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol"
+        "fuel": "Petrol",
+        "image": {
+          "src": "/maserati-ghibli.png",
+          "alt": "Maserati Ghibli",
+          "aspectRatio": 2
+        }
       }
     ]
   },
