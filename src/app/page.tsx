@@ -24,7 +24,11 @@ const HomePage = (): JSX.Element => (
       heading={homeData.hero.heading}
       synopsis={homeData.hero.synopsis}
       actions={homeData.hero.actions}
-      heroImage={generateDatoTestImage(800, 'film', 1025)}
+      heroImage={{
+        src: '/merc-eqe-300.png',
+        width: 900,
+        aspectRatio: 1.8,
+      }}
     />
     <Container>
       <BookSection heading="Book a car" />
@@ -53,15 +57,20 @@ const HomePage = (): JSX.Element => (
         <Text variant="text-small">Text small</Text>
       </Container>
     </Region> */}
-    <Region>
+    <Region className="bg-brand-off-white">
       <Container>
         <FeaturedFleet
           heading={homeData.featuredCars.heading}
           subheading={homeData.featuredCars.subheading}
           content={homeData.featuredCars.content}
-          cars={homeData.featuredCars.cars.map((car, index) => ({
+          cars={homeData.featuredCars.cars.map((car) => ({
             ...car,
-            image: generateDatoTestImage(500, 'film', 1022 + index),
+            image: {
+              src: car.image.src,
+              aspectRatio: car.image.aspectRatio,
+              width: 700,
+              alt: car.image.alt,
+            },
           }))}
         />
       </Container>
@@ -73,13 +82,19 @@ const HomePage = (): JSX.Element => (
         actions={calloutData.actions}
       />
     </Region>
-    <Region>
+    <Region className="bg-brand-off-white">
       <Container>
         <WhyUs
           heading={homeData.whyUs.heading}
           subheading={homeData.whyUs.subheading}
           content={homeData.whyUs.content}
-          image={generateDatoTestImage(900, 'hdtv', 1025)}
+          // image={generateDatoTestImage(900, 'hdtv', 1025)}
+          image={{
+            src: '/car-group.png',
+            alt: 'Group of luxury cars',
+            aspectRatio: 3.2,
+            width: 1600,
+          }}
           perks={homeData.whyUs.perks}
         />
       </Container>

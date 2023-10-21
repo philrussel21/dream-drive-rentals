@@ -117,7 +117,7 @@ const FeaturedFleet = ({
           ))}
         </div>
         <div>
-          <Image data={activeCar.image} />
+          <Image data={activeCar.image} className="object-cover" />
         </div>
         <div>
           <CarTableData car={activeCar} />

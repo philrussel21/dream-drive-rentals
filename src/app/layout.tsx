@@ -26,7 +26,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en">
       <body className={`${playfair_display.variable} ${lato.variable}`}>
-        <main className="min-h-screen bg-black text-brand-platinum font-body">
+        <main className="min-h-screen bg-white text-brand-platinum font-body">
           <Header links={headerLinks} />
           {children}
           <Footer
