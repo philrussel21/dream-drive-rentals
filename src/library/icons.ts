@@ -10,6 +10,10 @@ const icons = {
 	car: SVG.Car,
 	operator: SVG.Operator,
 	locations: SVG.Locations,
+	pickups: SVG.Pickups,
+	pricing: SVG.Pricing,
+	charge: SVG.Charge,
+	miles: SVG.Miles,
 };
 
 export default icons;

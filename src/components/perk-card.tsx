@@ -1,4 +1,5 @@
 import icons from '@app/library/icons';
+import {Heading, Text} from '.';
 
 type PerkCardProperties = {
   title: string;
@@ -11,12 +12,12 @@ const PerkCard = ({title, text, icon}: PerkCardProperties): JSX.Element => {
 
   return (
     <div className="flex flex-col sm:flex-row gap-6 items-center">
-      <div>
-        <Icon className="w-12" />
+      <div className="p-5 bg-black/80 rounded-full drop-shadow-2xl">
+        <Icon className="w-12 h-12" />
       </div>
-      <div className="text-center space-y-6">
-        <h4>{title}</h4>
-        <p>{text}</p>
+      <div className="text-center space-y-4">
+        <Heading label={title} variant="heading-five" element="h4" />
+        <Text className="text-center">{text}</Text>
       </div>
     </div>
   );

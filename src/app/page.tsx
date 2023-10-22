@@ -85,7 +85,6 @@ const HomePage = (): JSX.Element => (
           heading={homeData.whyUs.heading}
           subheading={homeData.whyUs.subheading}
           content={homeData.whyUs.content}
-          // image={generateDatoTestImage(900, 'hdtv', 1025)}
           image={{
             src: '/car-group.png',
             alt: 'Group of luxury cars',
