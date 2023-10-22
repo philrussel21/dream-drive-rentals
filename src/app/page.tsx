@@ -30,7 +30,7 @@ const HomePage = (): JSX.Element => (
         aspectRatio: 1.8,
       }}
     />
-    <Container>
+    <Container className="-translate-y-16 md:-translate-y-1/4">
       <BookSection heading="Book a car" />
     </Container>
     <Region>
@@ -42,7 +42,7 @@ const HomePage = (): JSX.Element => (
         />
       </Container>
     </Region>
-    {/* <Region>
+    <Region>
       <Container>
         <Heading label="Heading" variant="headline" />
         <Heading label="Subheading" variant="subheading" />
@@ -56,7 +56,7 @@ const HomePage = (): JSX.Element => (
         <Text variant="text-regular">Text regular</Text>
         <Text variant="text-small">Text small</Text>
       </Container>
-    </Region> */}
+    </Region>
     <Region className="bg-brand-off-white">
       <Container>
         <FeaturedFleet
