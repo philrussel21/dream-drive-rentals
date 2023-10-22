@@ -41,7 +41,7 @@ const HomePage = (): JSX.Element => (
         />
       </Container>
     </Region>
-    <Region>
+    {/* <Region>
       <Container>
         <Heading label="Heading" variant="headline" />
         <Heading label="Subheading" variant="subheading" />
@@ -55,8 +55,8 @@ const HomePage = (): JSX.Element => (
         <Text variant="text-regular">Text regular</Text>
         <Text variant="text-small">Text small</Text>
       </Container>
-    </Region>
-    <Region className="bg-brand-off-white">
+    </Region> */}
+    <Region className="bg-brand-off-white py-16">
       <Container>
         <FeaturedFleet
           heading={homeData.featuredCars.heading}

@@ -28,7 +28,7 @@
 }
 
 .text-lead {
-  @apply text-xl font-medium;
+  @apply text-xl font-bold;
 }
 
 .text-regular,

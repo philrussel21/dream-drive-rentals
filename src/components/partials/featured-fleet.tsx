@@ -1,7 +1,7 @@
 'use client';
 
 import {Image, ResponsiveImageType} from 'react-datocms';
-import {Accordion, Button} from '..';
+import {Accordion, Button, Heading, Text} from '..';
 import Link from 'next/link';
 import {useCallback, useState} from 'react';
 
@@ -24,42 +24,45 @@ type FeaturedFleetProperties = {
   cars: FeaturedCar[];
 };
 
+const carLabelClasses = 'font-bold px-2';
+const carValueClasses = 'border-l-2 border-brand-charcoal px-2';
+
 const CarTableData = ({car}: {car: FeaturedCar}): JSX.Element => (
   <div className="space-y-4">
     <div className="flex flex-col">
-      <div className="p-4 bg-gray-800 text-white">
-        <p>{`$${car.price} / day`}</p>
+      <div className="p-4 bg-brand-charcoal text-brand-gold">
+        <Heading variant="heading-five" label={`$${car.price} / day`} />
       </div>
       <div className="grid grid-cols-2 p-2 border-x-2 border-gray-800">
-        <p>Make</p>
-        <p className="border-l-2 border-gray-800">{car.make}</p>
+        <p className={carLabelClasses}>Make</p>
+        <p className={carValueClasses}>{car.make}</p>
       </div>
       <div className="grid grid-cols-2 p-2 border-2 border-gray-800">
-        <p>Model</p>
-        <p className="border-l-2 border-gray-800">{car.model}</p>
+        <p className={carLabelClasses}>Model</p>
+        <p className={carValueClasses}>{car.model}</p>
       </div>
       <div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
-        <p>Year</p>
-        <p className="border-l-2 border-gray-800">{car.year}</p>
+        <p className={carLabelClasses}>Year</p>
+        <p className={carValueClasses}>{car.year}</p>
       </div>
       <div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
-        <p>Capacity</p>
-        <p className="border-l-2 border-gray-800">{car.capacity}</p>
+        <p className={carLabelClasses}>Capacity</p>
+        <p className={carValueClasses}>{car.capacity}</p>
       </div>
       <div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
-        <p>Transmission</p>
-        <p className="border-l-2 border-gray-800">{car.transmission}</p>
+        <p className={carLabelClasses}>Transmission</p>
+        <p className={carValueClasses}>{car.transmission}</p>
       </div>
       <div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
-        <p>Fuel</p>
-        <p className="border-l-2 border-gray-800">{car.fuel}</p>
+        <p className={carLabelClasses}>Fuel</p>
+        <p className={carValueClasses}>{car.fuel}</p>
       </div>
     </div>
     <div>
       <Link passHref legacyBehavior href="/">
         <Button.Link
           label="Reserve now"
-          variant="secondary"
+          variant="primary"
           className="!w-full"
         />
       </Link>
@@ -84,9 +87,9 @@ const FeaturedFleet = ({
 
   return (
     <div className="text-center">
-      <span>{subheading}</span>
-      <h2>{heading}</h2>
-      <p className="max-w-lg mx-auto">{content}</p>
+      <Heading label={subheading} variant="subheading" />
+      <Heading label={heading} variant="heading-two" element="h2" />
+      <Text className="max-w-lg mx-auto mt-5">{content}</Text>
       <div className="mt-6 md:hidden">
         <Accordion.Container expandMode="multiple">
           {cars.map((car) => (
@@ -101,25 +104,24 @@ const FeaturedFleet = ({
           ))}
         </Accordion.Container>
       </div>
-      <div className="hidden mt-6 md:flex justify-between space-x-8">
+      <div className="hidden mt-12 md:flex justify-between space-x-8">
         <div className="flex flex-col space-y-4">
           {cars.map((car) => (
-            <button
+            <Button.Semantic
               key={car.make}
               type="button"
-              className={`p-4 bg-gray-800 rounded-md hover:bg-gray-500 ${
-                activeCar.id === car.id ? 'bg-gray-500' : ''
-              }`}
+              disabled={activeCar.id === car.id}
+              label={`${car.make} ${car.model}`}
+              variant="primary"
+              className="disabled:!bg-brand-charcoal disabled:!text-brand-gold"
               onClick={handleChooseCar(car)}
-            >
-              {`${car.year} ${car.make} ${car.model}`}
-            </button>
+            />
           ))}
         </div>
-        <div>
+        <div className="min-h-[450px] flex items-center">
           <Image data={activeCar.image} className="object-cover" />
         </div>
-        <div>
+        <div className="shrink-0">
           <CarTableData car={activeCar} />
         </div>
       </div>
