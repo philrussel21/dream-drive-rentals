@@ -8,6 +8,18 @@ type CarouselProperties = {
   children: JSX.Element[];
 };
 
+const navButtonClasses = collapse(`
+  p-4
+  rounded-full
+  bg-brand-charcoal
+  text-brand-gold
+  active:scale-90
+  hover:bg-brand-gold
+  hover:text-brand-charcoal
+  disabled:opacity-30
+  disabled:pointer-events-none
+`);
+
 const Carousel = ({children}: CarouselProperties): JSX.Element => {
   const [activeSlide, setActiveSlide] = useState(0);
 
@@ -22,29 +34,34 @@ const Carousel = ({children}: CarouselProperties): JSX.Element => {
   }, [activeSlide]);
 
   return (
-    <div className="flex justify-center space-x-10">
-      <div className="flex items-center justify-center">
-        <button
-          type="button"
-          disabled={activeSlide === 0}
-          className="p-4 rounded-full bg-gray-300 hover:bg-gray-500 disabled:opacity-30 disabled:pointer-events-none"
-          onClick={handlePreviousSlide}
-        >
-          <span className="sr-only">Previous</span>
-          <ChevronLeftIcon className="w-5" />
-        </button>
+    <div className="space-y-8">
+      <div className="md:hidden flex justify-center">
+        {children[activeSlide]}
       </div>
-      <div>{children[activeSlide]}</div>
-      <div className="flex items-center justify-center">
-        <button
-          type="button"
-          disabled={activeSlide === children.length - 1}
-          className="p-4 rounded-full bg-gray-300 hover:bg-gray-500 disabled:opacity-30 disabled:pointer-events-none"
-          onClick={handleNextSlide}
-        >
-          <span className="sr-only">Next</span>
-          <ChevronRightIcon className="w-5" />
-        </button>
+      <div className="flex justify-center space-x-10">
+        <div className="flex items-center justify-center">
+          <button
+            type="button"
+            disabled={activeSlide === 0}
+            className={navButtonClasses}
+            onClick={handlePreviousSlide}
+          >
+            <span className="sr-only">Previous</span>
+            <ChevronLeftIcon className="w-5 fill-current" />
+          </button>
+        </div>
+        <div className="hidden md:block">{children[activeSlide]}</div>
+        <div className="flex items-center justify-center">
+          <button
+            type="button"
+            disabled={activeSlide === children.length - 1}
+            className={navButtonClasses}
+            onClick={handleNextSlide}
+          >
+            <span className="sr-only">Next</span>
+            <ChevronRightIcon className="w-5 fill-current" />
+          </button>
+        </div>
       </div>
     </div>
   );

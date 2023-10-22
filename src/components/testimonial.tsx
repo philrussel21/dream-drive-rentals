@@ -1,3 +1,5 @@
+import {Heading, Text} from '.';
+
 type TestimonialProps = {
   name: string;
   location: string;
@@ -9,10 +11,10 @@ const Testimonial = ({
   location,
   message,
 }: TestimonialProps): JSX.Element => (
-  <div className="bg-white text-black rounded-xl p-6">
-    <p>{`"${message}"`}</p>
-    <div className="flex flex-col text-left">
-      <span>{name}</span>
+  <div className="bg-white text-black rounded-xl p-8 drop-shadow-xl">
+    <Text variant="text-lead">{`"${message}"`}</Text>
+    <div className="flex flex-col text-left mt-6">
+      <Heading variant="heading-six" label={name} />
       <span>{location}</span>
     </div>
   </div>

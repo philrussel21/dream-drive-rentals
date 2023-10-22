@@ -1,5 +1,5 @@
 import {Container} from '.';
-import {Carousel, Testimonial} from '..';
+import {Carousel, Heading, Testimonial, Text} from '..';
 
 type Testimonial = {
   name: string;
@@ -20,17 +20,17 @@ const Testimonials = ({
   content,
   testimonials,
 }: TestimonialsProperties): JSX.Element => (
-  <div className="bg-gray-200 py-10 text-black">
+  <div className="bg-brand-off-white py-16 text-black">
     <Container>
-      <div className="text-center space-y-4">
-        <span>{subheading}</span>
-        <h2>{heading}</h2>
-        <p className="max-w-lg mx-auto">{content}</p>
+      <div className="text-center">
+        <Heading label={subheading} variant="subheading" />
+        <Heading label={heading} variant="heading-two" element="h2" />
+        <Text className="max-w-lg mx-auto mt-6">{content}</Text>
       </div>
-      <div className="mt-6">
+      <div className="mt-10">
         <Carousel>
           {testimonials.map((testimonial) => (
-            <div className="max-w-md">
+            <div className="max-w-lg">
               <Testimonial {...testimonial} />
             </div>
           ))}
