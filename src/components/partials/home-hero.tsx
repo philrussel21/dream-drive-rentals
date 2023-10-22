@@ -26,7 +26,7 @@ const HomeHero = ({
         <City className="absolute bottom-0 left-0 right-0 scale-150" />
         <Image priority data={heroImage} className="object-center relative" />
       </div>
-      <div className="flex flex-col justify-center text-black">
+      <div className="flex flex-col justify-center">
         <Heading label={subheading} variant="subheading" />
         <Heading label={heading} variant="headline" element="h1" />
         <Text className="mt-5">{synopsis}</Text>

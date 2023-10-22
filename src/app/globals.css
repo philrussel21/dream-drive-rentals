@@ -39,3 +39,28 @@
 .text-small {
   @apply text-sm;
 }
+
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
+.custom-calendar .react-datepicker__header {
+  @apply bg-brand-charcoal;
+}
+
+.custom-calendar .react-datepicker__current-month,
+.custom-calendar .react-datepicker__day-name {
+  @apply text-brand-off-white;
+}
+
+.custom-calendar .react-datepicker__navigation {
+  @apply mt-1;
+}
+
+.custom-calendar .react-datepicker__day--selected {
+  @apply bg-brand-charcoal text-brand-gold;
+}
+
+.custom-calendar .react-datepicker__day {
+  @apply hover:bg-brand-charcoal hover:text-brand-gold;
+}

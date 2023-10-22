@@ -1,5 +1,4 @@
-import {TrophyIcon} from '@heroicons/react/24/outline';
-import {Button, DateSelector, Select} from '..';
+import {Button, DateSelector, Heading, Select} from '..';
 import {cars, locations} from '@app/config';
 import Link from 'next/link';
 
@@ -8,15 +7,15 @@ type BookSectionProperties = {
 };
 
 const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
-  <section className="p-10 bg-gray-300 rounded-lg text-black">
-    <h2>{heading}</h2>
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
+  <section className="p-10 bg-black rounded-lg text-brand-off-white drop-shadow-2xl">
+    <Heading label={heading} variant="heading-three" element="h2" />
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 mt-5">
       <div>
         <Select
           label="Select your car"
           id="car"
           options={cars.map((car) => ({label: car, value: car}))}
-          icon="trophy"
+          icon="car"
         />
       </div>
       <div>
@@ -47,13 +46,9 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
       <div>
         <DateSelector label="Drop off date" id="dropOffDate" icon="calendar" />
       </div>
-      <div>
+      <div className="flex items-end">
         <Link passHref legacyBehavior href="/book">
-          <Button.Link
-            label="Book now"
-            className="!w-full"
-            variant="secondary"
-          />
+          <Button.Link label="Book now" className="!w-full" />
         </Link>
       </div>
     </div>
