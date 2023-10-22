@@ -1,7 +1,7 @@
 import {LinkType} from '@app/library/types';
 import {isPopulated} from '@growthops/ext-ts';
 import Link from 'next/link';
-import {Button} from '..';
+import {Button, Heading, Text} from '..';
 
 type CalloutProperties = {
   heading: string;
@@ -14,9 +14,11 @@ const Callout = ({
   content,
   actions,
 }: CalloutProperties): JSX.Element => (
-  <div className="text-center bg-brand-off-white text-black space-y-8 px-4 py-12">
-    <h3>{heading}</h3>
-    <p className="max-w-xl mx-auto">{content}</p>
+  <div className="text-center bg-brand-charcoal text-brand-platinum space-y-8 px-4 py-12">
+    <Heading label={heading} variant="headline" element="h3" />
+    <Text variant="text-lead" className="max-w-xl mx-auto">
+      {content}
+    </Text>
     {isPopulated(actions) && (
       <div className="flex space-x-6 justify-center">
         {actions.map((action, index) => (

@@ -74,14 +74,12 @@ const HomePage = (): JSX.Element => (
         />
       </Container>
     </Region>
+    <Callout
+      heading={calloutData.heading}
+      content={calloutData.content}
+      actions={calloutData.actions}
+    />
     <Region>
-      <Callout
-        heading={calloutData.heading}
-        content={calloutData.content}
-        actions={calloutData.actions}
-      />
-    </Region>
-    <Region className="bg-brand-off-white">
       <Container>
         <WhyUs
           heading={homeData.whyUs.heading}
