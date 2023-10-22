@@ -103,7 +103,7 @@ const HomePage = (): JSX.Element => (
         testimonials={testimonials}
       />
     </Region>
-    <Region>
+    <Region className="pb-20">
       <Container isNarrow>
         <FAQs heading="Frequently Asked Questions" faqs={faqs} />
       </Container>

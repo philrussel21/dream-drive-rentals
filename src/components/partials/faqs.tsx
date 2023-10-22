@@ -1,6 +1,6 @@
 'use client';
 
-import {Accordion} from '..';
+import {Accordion, Heading, Text} from '..';
 
 type FAQ = {
   question: string;
@@ -14,13 +14,18 @@ type FAQsProperties = {
 
 const FAQs = ({heading, faqs}: FAQsProperties): JSX.Element => (
   <div className="py-10">
-    <h2 className="text-center">{heading}</h2>
-    <div className="mt-6">
+    <Heading
+      label={heading}
+      variant="heading-two"
+      element="h2"
+      className="text-center"
+    />
+    <div className="mt-10">
       <Accordion.Container>
         {faqs.map((faq) => (
           <Accordion.Panel label={faq.question} key={faq.question}>
             <div className="text-black">
-              <p>{faq.answer}</p>
+              <Text>{faq.answer}</Text>
             </div>
           </Accordion.Panel>
         ))}

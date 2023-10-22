@@ -1,7 +1,7 @@
 'use client';
 
 import {useState, useContext, useCallback, useMemo, createContext} from 'react';
-import {isNil, reject, equals} from 'remeda';
+import {reject, equals} from 'remeda';
 import {MinusIcon, PlusIcon} from '@heroicons/react/24/solid';
 import {collapse} from '@growthops/ext-ts';
 
@@ -76,11 +76,10 @@ const panelButtonClasses = `
 	font-semibold
 	p-4
 	md:py-6
-	text-black
-	rounded-lg
+	rounded-t-lg
 	transition
 	hover:underline
-  bg-gray-300
+  transition-colors
 `;
 
 const Panel = ({children, label}: PanelProperties): JSX.Element => {
@@ -97,10 +96,14 @@ const Panel = ({children, label}: PanelProperties): JSX.Element => {
 
   const classes = useMemo(
     () => ({
-      root: isActive ? 'rounded-lg bg-gray-300' : '',
+      root: `drop-shadow-lg ${
+        isActive ? 'bg-brand-off-white rounded-b-lg' : ''
+      }`,
       button: collapse([
         panelButtonClasses,
-        isActive ? 'bg-gray-300 underline' : '',
+        isActive
+          ? 'bg-brand-charcoal underline text-brand-gold'
+          : 'bg-brand-off-white text-brand-charcoal rounded-b-lg',
       ]),
       triggerIcons: 'ml-4 w-5 flex-shrink-0',
     }),
