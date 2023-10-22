@@ -1,5 +1,5 @@
 import {BenefitProps} from '../benefit-card';
-import {BenefitCard} from '..';
+import {BenefitCard, Heading} from '..';
 
 type BenefitsSectionProperties = {
   heading: string;
@@ -13,9 +13,9 @@ const BenefitsSection = ({
   benefits,
 }: BenefitsSectionProperties): JSX.Element => (
   <div className="text-center">
-    <span>{subheading}</span>
-    <h2>{heading}</h2>
-    <div className="flex flex-col gap-12 sm:flex-row sm:flex-wrap justify-center items-center mt-12">
+    <Heading label={subheading} variant="subheading" />
+    <Heading label={heading} variant="heading-two" element="h2" />
+    <div className="flex flex-col gap-12 sm:flex-row sm:flex-wrap justify-center items-center mt-16">
       {benefits.map((benefit) => (
         <div key={benefit.title} className="max-w-xs">
           <BenefitCard {...benefit} />

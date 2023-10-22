@@ -21,17 +21,17 @@
       {
         "title": "Dream cars",
         "text": "We offer a big range of vehicles for all your driving needs. We have the perfect car to meet your needs",
-        "icon": "trophy"
+        "icon": "car"
       },
       {
         "title": "Friendly operators",
         "text": "Our operators are always ready to help you. We are available 24/7 to assist you with your booking.",
-        "icon": "trophy"
+        "icon": "operator"
       },
       {
         "title": "Multiple locations",
         "text": "We have multiple locations all over Australia. You can pick up your car at any of our locations.",
-        "icon": "trophy"
+        "icon": "locations"
       }
     ]
   },

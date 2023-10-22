@@ -8,6 +8,8 @@ const icons = {
 	location: MapPinIcon,
   calendar: CalendarDaysIcon,
 	car: SVG.Car,
+	operator: SVG.Operator,
+	locations: SVG.Locations,
 };
 
 export default icons;

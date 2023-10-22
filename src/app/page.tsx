@@ -14,7 +14,6 @@ import homeData from '@app/data/home.json';
 import testimonials from '@app/data/testimonials.json';
 import calloutData from '@app/data/callout.json';
 import faqs from '@app/data/faqs.json';
-import {generateDatoTestImage} from '@growthops/ext-ts';
 import {Heading, Text} from '@app/components';
 
 const HomePage = (): JSX.Element => (

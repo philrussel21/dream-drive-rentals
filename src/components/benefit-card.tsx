@@ -1,4 +1,5 @@
-import icons, {Icon} from '@app/library/icons';
+import icons from '@app/library/icons';
+import {Heading, Text} from '.';
 
 type BenefitProperties = {
   title: string;
@@ -11,9 +12,11 @@ const Benefit = ({title, text, icon}: BenefitProperties): JSX.Element => {
 
   return (
     <div className="flex flex-col space-y-4 items-center justify-center">
-      <Icon className="w-12" />
-      <h4>{title}</h4>
-      <p className="text-center">{text}</p>
+      <div className="p-4 bg-black/80 rounded-full drop-shadow-2xl">
+        <Icon className="w-12 h-12" />
+      </div>
+      <Heading label={title} variant="heading-five" element="h4" />
+      <Text className="text-center">{text}</Text>
     </div>
   );
 };
