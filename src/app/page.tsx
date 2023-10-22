@@ -41,21 +41,6 @@ const HomePage = (): JSX.Element => (
         />
       </Container>
     </Region>
-    {/* <Region>
-      <Container>
-        <Heading label="Heading" variant="headline" />
-        <Heading label="Subheading" variant="subheading" />
-        <Heading label="Heading One" variant="heading-one" />
-        <Heading label="Heading Two" variant="heading-two" />
-        <Heading label="Heading Three" variant="heading-three" />
-        <Heading label="Heading Four" variant="heading-four" />
-        <Heading label="Heading Five" variant="heading-five" />
-        <Heading label="Heading Six" variant="heading-six" />
-        <Text variant="text-lead">Text lead</Text>
-        <Text variant="text-regular">Text regular</Text>
-        <Text variant="text-small">Text small</Text>
-      </Container>
-    </Region> */}
     <Region className="bg-brand-off-white py-16">
       <Container>
         <FeaturedFleet
