@@ -30,7 +30,7 @@ const Testimonials = ({
       <div className="mt-10">
         <Carousel>
           {testimonials.map((testimonial) => (
-            <div className="max-w-lg">
+            <div key={testimonial.name} className="max-w-lg">
               <Testimonial {...testimonial} />
             </div>
           ))}

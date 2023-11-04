@@ -47,7 +47,7 @@ const Footer = ({
             </a>
             <p className="flex space-x-2">
               <MapPinIcon className={iconClasses} />
-              <Text>{address}</Text>
+              <Text element="span">{address}</Text>
             </p>
           </div>
         </div>

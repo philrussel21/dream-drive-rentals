@@ -93,7 +93,10 @@ const FeaturedFleet = ({
       <div className="mt-6 md:hidden">
         <Accordion.Container expandMode="multiple">
           {cars.map((car) => (
-            <Accordion.Panel label={`${car.year} ${car.make} ${car.model}`}>
+            <Accordion.Panel
+              key={car.id}
+              label={`${car.year} ${car.make} ${car.model}`}
+            >
               <div className="space-y-6 text-black">
                 <div>
                   <Image data={car.image} />
@@ -108,7 +111,7 @@ const FeaturedFleet = ({
         <div className="flex flex-col space-y-4">
           {cars.map((car) => (
             <Button.Semantic
-              key={car.make}
+              key={car.id}
               type="button"
               disabled={activeCar.id === car.id}
               label={`${car.make} ${car.model}`}

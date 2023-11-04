@@ -5,7 +5,7 @@ const Charge = ({className}: {className?: string}): JSX.Element => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#chargea)">
+    <g clipPath="url(#chargea)">
       <mask
         id="chargeb"
         style={{maskType: 'luminance'}}

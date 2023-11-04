@@ -5,7 +5,7 @@ const City = ({className}: {className?: string}): JSX.Element => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#a)">
+    <g clipPath="url(#a)">
       <mask
         id="b"
         style={{maskType: 'luminance'}}
@@ -456,14 +456,7 @@ const City = ({className}: {className?: string}): JSX.Element => (
         fill="#FFC700"
       />
     </g>
-    <ellipse
-      cx="545"
-      cy="479"
-      rx="545"
-      ry="479"
-      fill="#000"
-      fill-opacity=".2"
-    />
+    <ellipse cx="545" cy="479" rx="545" ry="479" fill="#000" fillOpacity=".2" />
     <defs>
       <clipPath id="a">
         <path

@@ -5,7 +5,7 @@ const Pickups = ({className}: {className?: string}): JSX.Element => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#pickupsa)">
+    <g clipPath="url(#pickupsa)">
       <mask
         id="pickupsb"
         style={{maskType: 'luminance'}}
@@ -19,8 +19,8 @@ const Pickups = ({className}: {className?: string}): JSX.Element => (
       </mask>
       <g mask="url(#pickupsb)">
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M250 .042c24.292 0 43.984 19.693 43.984 43.984a43.803 43.803 0 0 1-6.515 23.052c-4.959 8.209-9.917 16.422-14.875 24.636-6.037 9.812-10.922 17.75-16.959 27.567-5.322 8.651-5.682 8.865-11.031.167-6.005-9.766-11.057-17.974-17.062-27.734-4.948-8.12-9.891-16.24-14.839-24.36a43.817 43.817 0 0 1-6.687-23.328C206.016 19.734 225.708.042 250 .042Zm0 22.052c10.891 0 19.719 8.828 19.719 19.719 0 10.89-8.828 19.718-19.719 19.718-10.891 0-19.719-8.828-19.719-19.718 0-10.891 8.828-19.72 19.719-19.72Z"
           fill="#FFC700"
         />

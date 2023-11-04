@@ -5,7 +5,7 @@ const Locations = ({className}: {className?: string}): JSX.Element => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g clip-path="url(#locationsa)">
+    <g clipPath="url(#locationsa)">
       <mask
         id="locationsb"
         style={{maskType: 'luminance'}}
