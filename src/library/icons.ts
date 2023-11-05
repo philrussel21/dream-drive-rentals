@@ -7,6 +7,7 @@ const icons = {
 	trophy: TrophyIcon,
 	location: MapPinIcon,
   calendar: CalendarDaysIcon,
+	customers: SVG.Customers,
 	car: SVG.Car,
 	operator: SVG.Operator,
 	locations: SVG.Locations,

@@ -17,7 +17,12 @@ const AboutPage = () => {
           <AboutSection
             heading={aboutPageData.about.heading}
             subheading={aboutPageData.about.subheading}
-            image={generateDatoTestImage(400, 'portrait', 1025)}
+            image={{
+              src: 'images/about.png',
+              alt: 'About us image',
+              width: 400,
+              aspectRatio: 0.75,
+            }}
             content={aboutPageData.about.content}
             stats={aboutPageData.about.stats}
           />
