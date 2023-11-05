@@ -50,7 +50,7 @@
         "transmission": "Automatic",
         "fuel": "Petrol",
         "image": {
-          "src": "/audi-s3.png",
+          "src": "images/audi-s3.png",
           "alt": "Audi S3",
           "aspectRatio": 2.1
         }
@@ -65,7 +65,7 @@
         "transmission": "Automatic",
         "fuel": "Petrol",
         "image": {
-          "src": "/lambo-revuelto.png",
+          "src": "images/lambo-revuelto.png",
           "alt": "Lamborghini Revuelto",
           "aspectRatio": 1.7
         }
@@ -80,7 +80,7 @@
         "transmission": "Automatic",
         "fuel": "Electric",
         "image": {
-          "src": "/merc-eqe-300.png",
+          "src": "images/merc-eqe-300.png",
           "alt": "Mercedes EQE 300",
           "aspectRatio": 1.7
         }
@@ -95,7 +95,7 @@
         "transmission": "Automatic",
         "fuel": "Petrol",
         "image": {
-          "src": "/ferrari-portofino.png",
+          "src": "images/ferrari-portofino.png",
           "alt": "Ferrari Portofino",
           "aspectRatio": 2
         }
@@ -110,7 +110,7 @@
         "transmission": "Automatic",
         "fuel": "Petrol",
         "image": {
-          "src": "/maserati-ghibli.png",
+          "src": "images/maserati-ghibli.png",
           "alt": "Maserati Ghibli",
           "aspectRatio": 2
         }

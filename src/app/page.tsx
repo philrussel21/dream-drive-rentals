@@ -14,7 +14,6 @@ import homeData from '@app/data/home.json';
 import testimonials from '@app/data/testimonials.json';
 import calloutData from '@app/data/callout.json';
 import faqs from '@app/data/faqs.json';
-import {Heading, Text} from '@app/components';
 
 const HomePage = (): JSX.Element => (
   <div>
@@ -24,7 +23,7 @@ const HomePage = (): JSX.Element => (
       synopsis={homeData.hero.synopsis}
       actions={homeData.hero.actions}
       heroImage={{
-        src: '/merc-eqe-300.png',
+        src: 'images/merc-eqe-300.png',
         width: 900,
         aspectRatio: 1.8,
       }}
@@ -71,7 +70,7 @@ const HomePage = (): JSX.Element => (
           subheading={homeData.whyUs.subheading}
           content={homeData.whyUs.content}
           image={{
-            src: '/car-group.png',
+            src: 'images/car-group.png',
             alt: 'Group of luxury cars',
             aspectRatio: 3.2,
             width: 1600,
