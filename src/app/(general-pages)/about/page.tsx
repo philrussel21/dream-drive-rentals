@@ -6,7 +6,6 @@ import {
   Region,
 } from '@app/components/partials';
 import aboutPageData from '@app/data/about.json';
-import {generateDatoTestImage} from '@growthops/ext-ts';
 
 const AboutPage = () => {
   return (
