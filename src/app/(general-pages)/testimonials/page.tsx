@@ -1,4 +1,4 @@
-import {Testimonial} from '@app/components';
+import {Heading, Testimonial, Text} from '@app/components';
 import {Container, FAQs, Hero, Region} from '@app/components/partials';
 import faqsData from '@app/data/faqs.json';
 import testimonialsData from '@app/data/testimonials.json';
@@ -10,14 +10,22 @@ const TestimonialsPage = () => {
       <Region>
         <Container className="text-center">
           <div className="space-y-4">
-            <span>Reviewed by people</span>
-            <h2>Client Testimonials</h2>
-            <p className="max-w-xl mx-auto">
+            <Heading
+              label="Reviewed by people"
+              variant="subheading"
+              element="span"
+            />
+            <Heading
+              label="Customer Feedback"
+              variant="heading-two"
+              element="h2"
+            />
+            <Text className="max-w-xl mx-auto">
               Discover the positive impact we've made on the our clients by
               reading through their testimonials. Our clients have experienced
               our service and results, and they're eager to share their positive
               experiences with you.
-            </p>
+            </Text>
           </div>
           <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonialsData.map((testimonial) => (
