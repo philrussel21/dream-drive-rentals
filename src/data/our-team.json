@@ -1,38 +1,56 @@
 [
   {
+    "name": "David Wallace",
+    "position": "CFO",
+    "image": {
+      "src": "images/team/david.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
+  },
+  {
     "name": "Michael Scott",
-    "position": "Regional Manager"
+    "position": "Regional Manager",
+    "image": {
+      "src": "images/team/michael.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
   },
   {
     "name": "Dwight Schrute",
-    "position": "Assistant to the Regional Manager"
+    "position": "Assistant to the Regional Manager",
+    "image": {
+      "src": "images/team/dwight.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
   },
   {
     "name": "Jim Halpert",
-    "position": "Sales Representative"
+    "position": "Sales Representative",
+    "image": {
+      "src": "images/team/jim.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
   },
   {
     "name": "Pam Beesly",
-    "position": "Receptionist"
-  },
-  {
-    "name": "Stanley Hudson",
-    "position": "Sales Representative"
-  },
-  {
-    "name": "Phyllis Vance",
-    "position": "Sales Representative"
-  },
-  {
-    "name": "Toby Flenderson",
-    "position": "Human Resources"
+    "position": "Receptionist",
+    "image": {
+      "src": "images/team/pam.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
   },
   {
     "name": "Creed Bratton",
-    "position": "Quality Assurance"
-  },
-  {
-    "name": "David Wallace",
-    "position": "CFO"
+    "position": "Quality Assurance",
+    "image": {
+      "src": "images/team/creed.png",
+      "aspectRatio": 1,
+      "width": 500
+    }
   }
 ]
