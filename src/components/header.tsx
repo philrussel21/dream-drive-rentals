@@ -53,7 +53,7 @@ const Header = ({links}: HeaderProperties): JSX.Element => {
   }, []);
 
   return (
-    <nav className="py-6 fixed w-full !max-w-none z-50 bg-brand-off-white text-black">
+    <nav className="py-6 fixed w-full !max-w-none z-50 bg-brand-off-white text-black top-0">
       <div className="flex justify-between container">
         <Link href="/">
           <div>

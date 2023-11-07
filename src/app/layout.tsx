@@ -28,7 +28,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body className={`${playfair_display.variable} ${lato.variable}`}>
         <main className="min-h-screen bg-white text-brand-charcoal font-body">
           <Header links={headerLinks} />
-          {children}
+          <div className="pt-20">{children}</div>
           <Footer
             email={contactData.contact.email}
             phone={contactData.contact.phone}
