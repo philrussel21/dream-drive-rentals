@@ -13,34 +13,32 @@ type TextareaProperties = React.ComponentPropsWithoutRef<'textarea'> & {
 };
 
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProperties>(
-  (
-    {
-      className,
-      id,
-      label,
-      error,
-      icon,
-      ...intrinsicTextareaProperties
-    }: TextareaProperties,
-    reference
-  ) => {
-    const Icon = useMemo(() => icons[icon as keyof typeof icons], []);
+	(
+		{
+			id,
+			label,
+			icon,
+			...intrinsicTextareaProperties
+		}: TextareaProperties,
+		reference,
+	) => {
+		const Icon = useMemo(() => icons[icon as keyof typeof icons], []);
 
-    return (
-      <div className="space-y-4">
-        <label htmlFor={id} className="flex space-x-2 text-xl">
-          {notNil(Icon) && <Icon className="w-7" />}
-          <span>{label}</span>
-        </label>
-        <textarea
-          ref={reference}
-          id={id}
-          className="p-4 w-full bg-white resize-none rounded-md text-black outline-brand-charcoal"
-          {...intrinsicTextareaProperties}
-        />
-      </div>
-    );
-  }
+		return (
+			<div className="space-y-4">
+				<label htmlFor={id} className="flex space-x-2 text-xl">
+					{notNil(Icon) && <Icon className="w-7"/>}
+					<span>{label}</span>
+				</label>
+				<textarea
+					ref={reference}
+					id={id}
+					className="p-4 w-full bg-white resize-none rounded-md text-black outline-brand-charcoal"
+					{...intrinsicTextareaProperties}
+				/>
+			</div>
+		);
+	},
 );
 
 Textarea.displayName = 'Textarea';

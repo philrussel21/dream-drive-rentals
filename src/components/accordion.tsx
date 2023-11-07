@@ -23,47 +23,47 @@ type PanelProperties = {
 };
 
 const containerContext = createContext<ContainerContext>({
-  activePanels: [],
+	activePanels: [],
 });
 
 const Container = ({
-  children,
-  expandMode = 'single',
+	children,
+	expandMode = 'single',
 }: ContainerProperties): JSX.Element => {
-  const [activePanels, setActivePanels] = useState<string[]>([]);
+	const [activePanels, setActivePanels] = useState<string[]>([]);
 
-  const toggleActivePanel = useCallback(
-    (label: string) => {
-      if (expandMode === 'single') {
-        setActivePanels(activePanels.includes(label) ? [] : [label]);
-      }
+	const toggleActivePanel = useCallback(
+		(label: string) => {
+			if (expandMode === 'single') {
+				setActivePanels(activePanels.includes(label) ? [] : [label]);
+			}
 
-      if (expandMode === 'multiple') {
-        setActivePanels(
-          activePanels.includes(label)
-            ? reject(activePanels, equals(label))
-            : [...activePanels, label]
-        );
-      }
-    },
-    [activePanels, expandMode]
-  );
+			if (expandMode === 'multiple') {
+				setActivePanels(
+					activePanels.includes(label)
+						? reject(activePanels, equals(label))
+						: [...activePanels, label],
+				);
+			}
+		},
+		[activePanels, expandMode],
+	);
 
-  const context = useMemo(
-    () => ({
-      toggleActivePanel,
-      activePanels,
-    }),
-    [toggleActivePanel, activePanels]
-  );
+	const context = useMemo(
+		() => ({
+			toggleActivePanel,
+			activePanels,
+		}),
+		[toggleActivePanel, activePanels],
+	);
 
-  return (
-    <section className="space-y-4">
-      <containerContext.Provider value={context}>
-        {children}
-      </containerContext.Provider>
-    </section>
-  );
+	return (
+		<section className="space-y-4">
+			<containerContext.Provider value={context}>
+				{children}
+			</containerContext.Provider>
+		</section>
+	);
 };
 
 const panelButtonClasses = `
@@ -83,62 +83,62 @@ const panelButtonClasses = `
 `;
 
 const Panel = ({children, label}: PanelProperties): JSX.Element => {
-  const {toggleActivePanel, activePanels} = useContext(containerContext);
+	const {toggleActivePanel, activePanels} = useContext(containerContext);
 
-  const handleTogglePanel = useCallback(() => {
-    toggleActivePanel?.(label);
-  }, [toggleActivePanel, label]);
+	const handleTogglePanel = useCallback(() => {
+		toggleActivePanel?.(label);
+	}, [toggleActivePanel, label]);
 
-  const isActive = useMemo(
-    () => activePanels.includes(label),
-    [activePanels, label]
-  );
+	const isActive = useMemo(
+		() => activePanels.includes(label),
+		[activePanels, label],
+	);
 
-  const classes = useMemo(
-    () => ({
-      root: `drop-shadow-lg ${
-        isActive ? 'bg-brand-off-white rounded-b-lg' : ''
-      }`,
-      button: collapse([
-        panelButtonClasses,
-        isActive
-          ? 'bg-brand-charcoal underline text-brand-gold'
-          : 'bg-brand-off-white text-brand-charcoal rounded-b-lg',
-      ]),
-      triggerIcons: 'ml-4 w-5 flex-shrink-0',
-    }),
-    [isActive]
-  );
+	const classes = useMemo(
+		() => ({
+			root: `drop-shadow-lg ${
+				isActive ? 'bg-brand-off-white rounded-b-lg' : ''
+			}`,
+			button: collapse([
+				panelButtonClasses,
+				isActive
+					? 'bg-brand-charcoal underline text-brand-gold'
+					: 'bg-brand-off-white text-brand-charcoal rounded-b-lg',
+			]),
+			triggerIcons: 'ml-4 w-5 flex-shrink-0',
+		}),
+		[isActive],
+	);
 
-  return (
-    <article className={classes.root}>
-      <header>
-        <button
-          key={label}
-          className={classes.button}
-          type="button"
-          onClick={handleTogglePanel}
-        >
-          <span>{label}</span>
-          {isActive && <MinusIcon className={classes.triggerIcons} />}
-          {!isActive && <PlusIcon className={classes.triggerIcons} />}
-        </button>
-      </header>
-      {isActive && <div className="pt-4 pb-8 px-6 md:px-8">{children}</div>}
-    </article>
-  );
+	return (
+		<article className={classes.root}>
+			<header>
+				<button
+					key={label}
+					className={classes.button}
+					type="button"
+					onClick={handleTogglePanel}
+				>
+					<span>{label}</span>
+					{isActive && <MinusIcon className={classes.triggerIcons}/>}
+					{!isActive && <PlusIcon className={classes.triggerIcons}/>}
+				</button>
+			</header>
+			{isActive && <div className="pt-4 pb-8 px-6 md:px-8">{children}</div>}
+		</article>
+	);
 };
 
 const Accordion = {
-  Container,
-  Panel,
+	Container,
+	Panel,
 };
 
 export default Accordion;
 
 export type {
-  ContainerContext,
-  ExpandMode,
-  ContainerProperties as ContainerProps,
-  PanelProperties as PanelProps,
+	ContainerContext,
+	ExpandMode,
+	ContainerProperties as ContainerProps,
+	PanelProperties as PanelProps,
 };

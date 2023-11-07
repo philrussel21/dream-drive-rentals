@@ -13,25 +13,25 @@ type FAQsProperties = {
 };
 
 const FAQs = ({heading, faqs}: FAQsProperties): JSX.Element => (
-  <div className="py-10">
-    <Heading
-      label={heading}
-      variant="heading-two"
-      element="h2"
-      className="text-center"
-    />
-    <div className="mt-10">
-      <Accordion.Container>
-        {faqs.map((faq) => (
-          <Accordion.Panel label={faq.question} key={faq.question}>
-            <div className="text-black">
-              <Text>{faq.answer}</Text>
-            </div>
-          </Accordion.Panel>
-        ))}
-      </Accordion.Container>
-    </div>
-  </div>
+	<div className="py-10">
+		<Heading
+			label={heading}
+			variant="heading-two"
+			element="h2"
+			className="text-center"
+		/>
+		<div className="mt-10">
+			<Accordion.Container>
+				{faqs.map((faq) => (
+					<Accordion.Panel key={faq.question} label={faq.question}>
+						<div className="text-black">
+							<Text>{faq.answer}</Text>
+						</div>
+					</Accordion.Panel>
+				))}
+			</Accordion.Container>
+		</div>
+	</div>
 );
 
 export default FAQs;

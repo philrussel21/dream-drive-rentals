@@ -1,4 +1,4 @@
-export {default as  Pricing} from './pricing';
+export {default as Pricing} from './pricing';
 export {default as Car} from './car';
 export {default as Charge} from './charge';
 export {default as City} from './city';

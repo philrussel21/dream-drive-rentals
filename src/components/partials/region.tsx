@@ -8,24 +8,19 @@ type RegionProperties = {
   id?: string;
 };
 
-const Region = ({
-  id,
-  children,
-  className = '',
-  hasTopMargin = true,
-}: RegionProperties): JSX.Element => {
-  const classes = useMemo(
-    () => ({
-      root: collapse([hasTopMargin ? 'mt-16 md:mt-20' : '', className]),
-    }),
-    [hasTopMargin, className]
-  );
+const Region = ({id, children, className = '', hasTopMargin = true}: RegionProperties): JSX.Element => {
+	const classes = useMemo(
+		() => ({
+			root: collapse([hasTopMargin ? 'mt-16 md:mt-20' : '', className]),
+		}),
+		[hasTopMargin, className],
+	);
 
-  return (
-    <section id={id} className={classes.root}>
-      {children}
-    </section>
-  );
+	return (
+		<section id={id} className={classes.root}>
+			{children}
+		</section>
+	);
 };
 
 export default Region;

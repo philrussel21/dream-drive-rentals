@@ -46,114 +46,114 @@ const baseClasses = collapse(`
 `);
 
 const variantClasses: Record<Variant, string> = {
-  primary: 'bg-brand-gold text-black',
-  secondary: 'bg-brand-silver text-black',
+	primary: 'bg-brand-gold text-black',
+	secondary: 'bg-brand-silver text-black',
 };
 
 const generateIcon = (
-  icon: Icon | undefined,
-  alignment: IconAlignment,
-  classes: string,
-  alignmentAdjustmentClasses: string
+	icon: Icon | undefined,
+	alignment: IconAlignment,
+	classes: string,
+	alignmentAdjustmentClasses: string,
 ): JSX.Element | undefined => {
-  if (!isNil(icon) && (icon.alignment ?? 'left') === alignment) {
-    return (
-      <icon.svg className={collapse([classes, alignmentAdjustmentClasses])} />
-    );
-  }
+	if (!isNil(icon) && (icon.alignment ?? 'left') === alignment) {
+		return (
+			<icon.svg className={collapse([classes, alignmentAdjustmentClasses])}/>
+		);
+	}
 };
 
 const useClasses = (
-  variant: Variant,
-  className: string | undefined,
-  icon: Icon | undefined
+	variant: Variant,
+	className: string | undefined,
+	icon: Icon | undefined,
 ): Record<string, string> =>
-  useMemo(
-    () => ({
-      root: collapse([baseClasses, variantClasses[variant], className ?? '']),
-      icon: collapse(['w-5', icon?.className ?? '']),
-    }),
-    [variant, className, icon?.className]
-  );
+	useMemo(
+		() => ({
+			root: collapse([baseClasses, variantClasses[variant], className ?? '']),
+			icon: collapse(['w-5', icon?.className ?? '']),
+		}),
+		[variant, className, icon?.className],
+	);
 
 const useIcons = (
-  icon: Icon | undefined,
-  classes: string
+	icon: Icon | undefined,
+	classes: string,
 ): Record<string, JSX.Element | undefined> =>
-  useMemo(
-    () => ({
-      left: generateIcon(icon, 'left', classes, '-ml-2'), // -ml-* here to visually weight the icon appropriately.
-      right: generateIcon(icon, 'right', classes, '!-mr-2'), // !-mr-* here to visually weight the icon appropriately.
-    }),
-    [icon, classes]
-  );
+	useMemo(
+		() => ({
+			left: generateIcon(icon, 'left', classes, '-ml-2'), // -ml-* here to visually weight the icon appropriately.
+			right: generateIcon(icon, 'right', classes, '!-mr-2'), // !-mr-* here to visually weight the icon appropriately.
+		}),
+		[icon, classes],
+	);
 
 const Semantic = ({
-  label,
-  variant = 'primary',
-  className,
-  icon,
-  ...intrinsicButtonProperties
+	label,
+	variant = 'primary',
+	className,
+	icon,
+	...intrinsicButtonProperties
 }: SemanticButtonProperties): JSX.Element => {
-  const classes = useClasses(variant, className, icon);
-  const icons = useIcons(icon, classes.icon);
+	const classes = useClasses(variant, className, icon);
+	const icons = useIcons(icon, classes.icon);
 
-  return (
-    <button
-      className={classes.root}
-      type="button"
-      {...intrinsicButtonProperties}
-    >
-      {icons.left}
-      <span>{label}</span>
-      {icons.right}
-    </button>
-  );
+	return (
+		<button
+			className={classes.root}
+			type="button"
+			{...intrinsicButtonProperties}
+		>
+			{icons.left}
+			<span>{label}</span>
+			{icons.right}
+		</button>
+	);
 };
 
 const Link = forwardRef<HTMLAnchorElement, LinkButtonProperties>(
-  (
-    {
-      label,
-      variant = 'primary',
-      className,
-      icon,
-      ...intrinsicAnchorProperties
-    }: LinkButtonProperties,
-    reference
-  ): JSX.Element => {
-    const classes = useClasses(variant, className, icon);
-    const icons = useIcons(icon, classes.icon);
+	(
+		{
+			label,
+			variant = 'primary',
+			className,
+			icon,
+			...intrinsicAnchorProperties
+		}: LinkButtonProperties,
+		reference,
+	): JSX.Element => {
+		const classes = useClasses(variant, className, icon);
+		const icons = useIcons(icon, classes.icon);
 
-    return (
-      <a
-        ref={reference}
-        className={classes.root}
-        {...intrinsicAnchorProperties}
-        rel="noreferrer"
-      >
-        {icons.left}
-        <span>{label}</span>
-        {icons.right}
-      </a>
-    );
-  }
+		return (
+			<a
+				ref={reference}
+				className={classes.root}
+				{...intrinsicAnchorProperties}
+				rel="noreferrer"
+			>
+				{icons.left}
+				<span>{label}</span>
+				{icons.right}
+			</a>
+		);
+	},
 );
 
 Link.displayName = 'Link';
 
 const Button = {
-  Semantic,
-  Link,
+	Semantic,
+	Link,
 };
 
 export default Button;
 
 export type {
-  Variant,
-  IconAlignment,
-  Icon,
-  BaseButtonProperties as BaseButtonProps,
-  SemanticButtonProperties as SemanticButtonProps,
-  LinkButtonProperties as LinkButtonProps,
+	Variant,
+	IconAlignment,
+	Icon,
+	BaseButtonProperties as BaseButtonProps,
+	SemanticButtonProperties as SemanticButtonProps,
+	LinkButtonProperties as LinkButtonProps,
 };

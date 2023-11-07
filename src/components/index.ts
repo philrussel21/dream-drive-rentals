@@ -4,7 +4,7 @@ export {default as Button} from './button';
 export {default as Carousel} from './carousel';
 export {default as DateSelector} from './date-selector';
 export {default as Header} from './header';
-export {default as Heading } from './heading';
+export {default as Heading} from './heading';
 export {default as Input} from './input';
 export {default as PerkCard} from './perk-card';
 export {default as Select} from './select';

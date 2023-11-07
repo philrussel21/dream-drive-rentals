@@ -7,23 +7,19 @@ type ContainerProperties = {
   isNarrow?: boolean;
 };
 
-const Container = ({
-  className = '',
-  isNarrow = false,
-  children,
-}: ContainerProperties): JSX.Element => {
-  const classes = useMemo(
-    () => ({
-      root: collapse([
-        'container',
-        isNarrow ? '!max-w-4xl mx-auto relative' : '',
-        className,
-      ]),
-    }),
-    [className]
-  );
+const Container = ({className = '', isNarrow = false, children}: ContainerProperties): JSX.Element => {
+	const classes = useMemo(
+		() => ({
+			root: collapse([
+				'container',
+				isNarrow ? '!max-w-4xl mx-auto relative' : '',
+				className,
+			]),
+		}),
+		[className],
+	);
 
-  return <div className={classes.root}>{children}</div>;
+	return <div className={classes.root}>{children}</div>;
 };
 
 export default Container;

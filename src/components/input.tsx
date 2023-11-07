@@ -13,34 +13,32 @@ type InputProperties = React.ComponentPropsWithoutRef<'input'> & {
 };
 
 const Input = forwardRef<HTMLInputElement, InputProperties>(
-  (
-    {
-      className,
-      id,
-      label,
-      error,
-      icon,
-      ...intrinsicInputProperties
-    }: InputProperties,
-    reference
-  ) => {
-    const Icon = useMemo(() => icons[icon as keyof typeof icons], []);
+	(
+		{
+			id,
+			label,
+			icon,
+			...intrinsicInputProperties
+		}: InputProperties,
+		reference,
+	) => {
+		const Icon = useMemo(() => icons[icon as keyof typeof icons], []);
 
-    return (
-      <div className="space-y-4">
-        <label htmlFor={id} className="flex space-x-2 text-xl">
-          {notNil(Icon) && <Icon className="w-7" />}
-          <span>{label}</span>
-        </label>
-        <input
-          ref={reference}
-          id={id}
-          className="p-4 w-full bg-white rounded-md text-black outline-brand-charcoal"
-          {...intrinsicInputProperties}
-        />
-      </div>
-    );
-  }
+		return (
+			<div className="space-y-4">
+				<label htmlFor={id} className="flex space-x-2 text-xl">
+					{notNil(Icon) && <Icon className="w-7"/>}
+					<span>{label}</span>
+				</label>
+				<input
+					ref={reference}
+					id={id}
+					className="p-4 w-full bg-white rounded-md text-black outline-brand-charcoal"
+					{...intrinsicInputProperties}
+				/>
+			</div>
+		);
+	},
 );
 
 Input.displayName = 'Input';

@@ -12,23 +12,23 @@ type TextProperties = {
 };
 
 const Text = ({
-  variant = 'text-regular',
-  children,
-  element = 'p',
-  className = '',
+	variant = 'text-regular',
+	children,
+	element = 'p',
+	className = '',
 }: TextProperties): JSX.Element => {
-  const sharedProperties = {
-    className: collapse([variant, className]),
-  };
+	const sharedProperties = {
+		className: collapse([variant, className]),
+	};
 
-  switch (element) {
-    case 'p': {
-      return <p {...sharedProperties}>{children}</p>;
-    }
-    case 'span': {
-      return <span {...sharedProperties}>{children}</span>;
-    }
-  }
+	switch (element) {
+		case 'p': {
+			return <p {...sharedProperties}>{children}</p>;
+		}
+		case 'span': {
+			return <span {...sharedProperties}>{children}</span>;
+		}
+	}
 };
 
 export default Text;
