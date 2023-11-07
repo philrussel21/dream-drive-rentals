@@ -40,7 +40,7 @@ const Select = ({label, id, options, icon}: SelectProperties): JSX.Element => {
   const Icon = useMemo(() => icons[icon as keyof typeof icons], []);
   return (
     <div>
-      <label htmlFor={id} className="flex space-x-2 items-center">
+      <label htmlFor={id} className="flex space-x-2 items-center text-xl">
         {notNil(Icon) && (
           <Icon
             className={

@@ -31,7 +31,7 @@ const DateSelector = ({
 
   return (
     <div>
-      <label htmlFor={id} className="flex space-x-2 items-center">
+      <label htmlFor={id} className="flex space-x-2 items-center text-xl">
         {notNil(Icon) && (
           <Icon className="w-7 text-brand-gold stroke-current" />
         )}
