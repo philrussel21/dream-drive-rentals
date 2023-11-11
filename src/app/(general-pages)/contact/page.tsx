@@ -86,18 +86,25 @@ const ContactPage = (): JSX.Element => {
 			isProcessing: true,
 		}));
 
-		// TODO: wrap with try/catch
-		const validationResponse = await axios.post<APIResponse>(
-			'/api/recaptcha',
-			{token: recaptchaValue},
-			// eslint-disable-next-line @typescript-eslint/naming-convention
-			{headers: {'Content-Type': 'application/json'}},
-		);
-		setState(current => ({
-			...current,
-			isProcessing: false,
-			isSubmitted: validationResponse.data.success,
-		}));
+		try {
+			const validationResponse = await axios.post<APIResponse>(
+				'/api/recaptcha',
+				{token: recaptchaValue},
+				// eslint-disable-next-line @typescript-eslint/naming-convention
+				{headers: {'Content-Type': 'application/json'}},
+			);
+			setState(current => ({
+				...current,
+				isProcessing: false,
+				isSubmitted: validationResponse.data.success,
+			}));	
+		} catch {
+			setState(current => ({
+				...current,
+				isProcessing: false,
+				hasError: true,
+			}));
+		}
 	}, [state, recaptchaReference, formState]);
 	
 	return (
@@ -182,7 +189,7 @@ const ContactPage = (): JSX.Element => {
 							/>
 						</div>
 						<div className="flex justify-center items-center">
-							<Button.Semantic type="submit" label="Submit"/>
+							<Button.Semantic type="submit" label="Submit" disabled={!state.hasRecaptchaPassed || state.isProcessing}/>
 						</div>
 					</form>
 				</Container>

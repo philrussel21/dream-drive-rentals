@@ -40,9 +40,8 @@ const baseClasses = collapse(`
 	md:w-auto
 	justify-center
 	transition
-	disabled:bg-gray-100
+	disabled:opacity-80
 	disabled:pointer-events-none
-	disabled:text-neutral-500
 `);
 
 const variantClasses: Record<Variant, string> = {
