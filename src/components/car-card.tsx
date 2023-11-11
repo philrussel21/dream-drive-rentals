@@ -6,7 +6,7 @@ type CarCardProperties = {
 	model: string;
 	make: string;
 	price: number;
-	year: string;
+	year: number;
 	capacity: number;
 	transmission: string;
 	fuel: string;
@@ -20,11 +20,12 @@ const carValueClasses = 'border-l-2 border-brand-charcoal px-2 text-center';
 const CarCard = ({model, make, image, price, year, capacity, transmission, fuel, location}: CarCardProperties): JSX.Element => (
 	<article>
 		<div className="border rounded-t-xl p-5">
-			<Heading label={`${year} ${make} ${model}`} variant="subheading" element="h3"/>
+			<Heading label={`${year}`} variant="subheading" element="h4"/>
+			<Heading label={`${make} ${model}`} variant="subheading" element="h3"/>
 			<Text element="span" className="opacity-70">{location}</Text>
 			<Image data={image}/>
 		</div>
-		<div className="p-4 bg-brand-charcoal text-brand-gold flex justify-between items-center">
+		<div className="p-3 bg-brand-charcoal text-brand-gold flex justify-between items-center space-x-2">
 			<Heading variant="heading-five" label={`$${price} / day`}/>
 			<Button.Semantic label="Book now" className="w-full block"/>
 		</div>

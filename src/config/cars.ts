@@ -1,12 +1,9 @@
-const cars = [
+const carMakers = [
 	'Audi',
-	'BMW',
 	'Mercedes',
-	'Porsche',
-	'Bugatti',
 	'Lamborghini',
 	'Ferrari',
 	'Maserati',
 ];
 
-export default cars;
+export default carMakers;

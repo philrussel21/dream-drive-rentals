@@ -1,5 +1,5 @@
 import {Button, DateSelector, Heading, Select} from '..';
-import {cars, locations} from '@app/config';
+import {carMakers, locations} from '@app/config';
 import Link from 'next/link';
 
 type BookSectionProperties = {
@@ -14,7 +14,7 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
 				<Select
 					label="Select your car"
 					id="car"
-					options={cars.map((car) => ({label: car, value: car}))}
+					options={carMakers.map((make) => ({label: make, value: make}))}
 					icon="car"
 				/>
 			</div>
