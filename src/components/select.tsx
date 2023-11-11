@@ -3,9 +3,10 @@
 import type {Icon} from '@app/library/icons';
 import icons from '@app/library/icons';
 import {notNil} from '@growthops/ext-ts';
-import {useMemo} from 'react';
+import {useCallback, useMemo} from 'react';
 import ReactSelect from 'react-select';
 import type {ClassNamesConfig} from 'react-select';
+import {isNil, isString} from 'remeda';
 
 type Option = {
   label: string;
@@ -17,6 +18,7 @@ type SelectProperties = {
   label: string;
   options: Option[];
   icon: Icon;
+	onChange?: (id: string, newValue: string) => void;
 };
 
 const reactSelectClasses: ClassNamesConfig = {
@@ -37,8 +39,17 @@ const reactSelectClasses: ClassNamesConfig = {
 		'block w-full p-3 text-brand-off-white hover:bg-brand-gold hover:text-brand-charcoal',
 };
 
-const Select = ({label, id, options, icon}: SelectProperties): JSX.Element => {
+const Select = ({label, id, options, icon, onChange}: SelectProperties): JSX.Element => {
 	const Icon = useMemo(() => icons[icon], []);
+
+	const handleOnSelectChange = useCallback((newValue: unknown) => {
+		const selectedOption = newValue as Option;
+
+		if (isNil(onChange) || isNil(selectedOption.value) || !isString(selectedOption.value)) {
+			return;
+		}
+		onChange(id, selectedOption.value);
+	}, [onChange]);
 	
 	return (
 		<div>
@@ -58,6 +69,7 @@ const Select = ({label, id, options, icon}: SelectProperties): JSX.Element => {
 				id={id}
 				className="mt-1"
 				classNames={reactSelectClasses}
+				onChange={handleOnSelectChange}
 			/>
 		</div>
 	);
@@ -65,4 +77,7 @@ const Select = ({label, id, options, icon}: SelectProperties): JSX.Element => {
 
 export default Select;
 
-export type {SelectProperties as SelectProps};
+export type {
+	SelectProperties as SelectProps,
+	Option,
+};
