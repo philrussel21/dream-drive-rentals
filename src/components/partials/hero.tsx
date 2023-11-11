@@ -14,7 +14,7 @@ const Hero = ({title}: HeroProperties): JSX.Element => (
 					width: 1900,
 					aspectRatio: 2.35,
 				}}
-				className="object-cover"
+				className="object-cover !max-w-none"
 			/>
 		</div>
 		<div className="relative py-12 md:absolute inset-0 flex justify-center items-center text-brand-off-white">
