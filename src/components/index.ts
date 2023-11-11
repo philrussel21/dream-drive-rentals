@@ -1,6 +1,7 @@
 export {default as Accordion} from './accordion';
 export {default as BenefitCard} from './benefit-card';
 export {default as Button} from './button';
+export {default as CarCard} from './car-card';
 export {default as Carousel} from './carousel';
 export {default as DateSelector} from './date-selector';
 export {default as Header} from './header';

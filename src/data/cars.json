@@ -1,0 +1,182 @@
+[
+	{
+		"id": "1",
+		"location": "Brisbane",
+		"make": "Audi",
+		"model": "S3",
+		"price": 300,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/audi-s3.png",
+			"alt": "Audi S3"
+		}
+	},
+	{
+		"id": "2",
+		"location": "Melbourne",
+		"make": "Lamborghini",
+		"model": "Revuelto",
+		"price": 1000,
+		"year": "2023",
+		"capacity": 2,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/lambo-revuelto.png",
+			"alt": "Lamborghini Revuelto"
+		}
+	},
+	{
+		"id": "3",
+		"location": "Sydney",
+		"make": "Mercedes",
+		"model": "EQE 300",
+		"price": 500,
+		"year": "2023",
+		"capacity": 4,
+		"transmission": "Automatic",
+		"fuel": "Electric",
+		"image": {
+			"src": "images/merc-eqe-300.png",
+			"alt": "Mercedes EQE 300"
+		}
+	},
+	{
+		"id": "4",
+		"location": "Perth",
+		"make": "Ferrari",
+		"model": "Portofino",
+		"price": 1000,
+		"year": "2020",
+		"capacity": 2,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/ferrari-portofino.png",
+			"alt": "Ferrari Portofino"
+		}
+	},
+	{
+		"id": "5",
+		"location": "Adelaide",
+		"make": "Maserati",
+		"model": "Ghibli",
+		"price": 500,
+		"year": "2019",
+		"capacity": 2,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/maserati-ghibli.png",
+			"alt": "Maserati Ghibli"
+		}
+	},
+	{
+		"id": "6",
+		"location": "Gold Coast",
+		"make": "Audi",
+		"model": "A5",
+		"price": 300,
+		"year": "2021",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/audi-a5.png",
+			"alt": "Audi A5"
+		}
+	},
+	{
+		"id": "6",
+		"location": "Canberra",
+		"make": "Ferrari",
+		"model": "Purosangue",
+		"price": 1000,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/ferrari-purosangue.png",
+			"alt": "Ferrari Purosangue"
+		}
+	},
+	{
+		"id": "7",
+		"location": "Darwin",
+		"make": "Ferrari",
+		"model": "Stradale",
+		"price": 1000,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/ferrari-stradale.png",
+			"alt": "Ferrari Stradale"
+		}
+	},
+	{
+		"id": "8",
+		"location": "Brisbane",
+		"make": "Maserati",
+		"model": "Grecale",
+		"price": 500,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/maserati-grecale.png",
+			"alt": "Maserati Grecale"
+		}
+	},
+	{
+		"id": "9",
+		"location": "Sydney",
+		"make": "Maserati",
+		"model": "MC20",
+		"price": 500,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/maserati-MC20.png",
+			"alt": "Maserati MC20"
+		}
+	},
+	{
+		"id": "10",
+		"location": "Melbourne",
+		"make": "Mercedes",
+		"model": "A35",
+		"price": 300,
+		"year": "2021",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/merc-a35.png",
+			"alt": "Mercedes A35"
+		}
+	},
+	{
+		"id": "11",
+		"location": "Brisbane",
+		"make": "Mercedes",
+		"model": "SL",
+		"price": 500,
+		"year": "2022",
+		"capacity": 5,
+		"transmission": "Automatic",
+		"fuel": "Petrol",
+		"image": {
+			"src": "images/merc-sl.png",
+			"alt": "Mercedes SL"
+		}
+	}
+]
