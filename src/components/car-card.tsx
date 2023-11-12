@@ -27,7 +27,7 @@ const CarCard = ({model, make, image, price, year, capacity, transmission, fuelT
 		</div>
 		<div className="p-3 bg-brand-charcoal text-brand-gold flex justify-between items-center space-x-2">
 			<Heading variant="heading-five" label={`$${price} / day`}/>
-			<Button.Semantic label="Book now" className="w-full block"/>
+			<Button.Semantic label="Select" className="w-full block"/>
 		</div>
 		<div className="grid grid-cols-2 p-2 border-x-2 border-gray-800">
 			<p className={carLabelClasses}>Make</p>
