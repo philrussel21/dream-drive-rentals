@@ -8,7 +8,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/audi-s3.png",
 			"alt": "Audi S3"
@@ -23,7 +23,7 @@
 		"year": 2023,
 		"capacity": 2,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/lambo-revuelto.png",
 			"alt": "Lamborghini Revuelto"
@@ -38,7 +38,7 @@
 		"year": 2023,
 		"capacity": 4,
 		"transmission": "Automatic",
-		"fuel": "Electric",
+		"fuelType": "Electric",
 		"image": {
 			"src": "images/merc-eqe-300.png",
 			"alt": "Mercedes EQE 300"
@@ -53,7 +53,7 @@
 		"year": 2020,
 		"capacity": 2,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/ferrari-portofino.png",
 			"alt": "Ferrari Portofino"
@@ -68,7 +68,7 @@
 		"year": 2019,
 		"capacity": 2,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/maserati-ghibli.png",
 			"alt": "Maserati Ghibli"
@@ -83,7 +83,7 @@
 		"year": 2021,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/audi-a5.png",
 			"alt": "Audi A5"
@@ -98,7 +98,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/ferrari-purosangue.png",
 			"alt": "Ferrari Purosangue"
@@ -113,7 +113,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/ferrari-stradale.png",
 			"alt": "Ferrari Stradale"
@@ -128,7 +128,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/maserati-grecale.png",
 			"alt": "Maserati Grecale"
@@ -143,7 +143,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/maserati-MC20.png",
 			"alt": "Maserati MC20"
@@ -158,7 +158,7 @@
 		"year": 2021,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/merc-a35.png",
 			"alt": "Mercedes A35"
@@ -173,7 +173,7 @@
 		"year": 2022,
 		"capacity": 5,
 		"transmission": "Automatic",
-		"fuel": "Petrol",
+		"fuelType": "Petrol",
 		"image": {
 			"src": "images/merc-sl.png",
 			"alt": "Mercedes SL"

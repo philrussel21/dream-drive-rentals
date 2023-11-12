@@ -12,7 +12,7 @@ type Car = {
 	year: number;
 	capacity: number;
 	transmission: string;
-	fuel: string;
+	fuelType: string;
 	location: string;
 	image: {
 		src: string;

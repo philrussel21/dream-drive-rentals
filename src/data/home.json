@@ -48,7 +48,7 @@
         "year": "2022",
         "capacity": 5,
         "transmission": "Automatic",
-        "fuel": "Petrol",
+        "fuelType": "Petrol",
         "image": {
           "src": "images/audi-s3.png",
           "alt": "Audi S3",
@@ -63,7 +63,7 @@
         "year": "2023",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol",
+        "fuelType": "Petrol",
         "image": {
           "src": "images/lambo-revuelto.png",
           "alt": "Lamborghini Revuelto",
@@ -78,7 +78,7 @@
         "year": "2023",
         "capacity": 4,
         "transmission": "Automatic",
-        "fuel": "Electric",
+        "fuelType": "Electric",
         "image": {
           "src": "images/merc-eqe-300.png",
           "alt": "Mercedes EQE 300",
@@ -93,7 +93,7 @@
         "year": "2020",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol",
+        "fuelType": "Petrol",
         "image": {
           "src": "images/ferrari-portofino.png",
           "alt": "Ferrari Portofino",
@@ -108,7 +108,7 @@
         "year": "2019",
         "capacity": 2,
         "transmission": "Automatic",
-        "fuel": "Petrol",
+        "fuelType": "Petrol",
         "image": {
           "src": "images/maserati-ghibli.png",
           "alt": "Maserati Ghibli",

@@ -14,7 +14,7 @@ type FeaturedCar = {
   year: string;
   capacity: number;
   transmission: string;
-  fuel: string;
+  fuelType: string;
   image: ResponsiveImageType;
 };
 
@@ -56,7 +56,7 @@ const CarTableData = ({car}: {car: FeaturedCar}): JSX.Element => (
 			</div>
 			<div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
 				<p className={carLabelClasses}>Fuel</p>
-				<p className={carValueClasses}>{car.fuel}</p>
+				<p className={carValueClasses}>{car.fuelType}</p>
 			</div>
 		</div>
 		<div>

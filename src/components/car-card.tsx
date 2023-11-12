@@ -9,7 +9,7 @@ type CarCardProperties = {
 	year: number;
 	capacity: number;
 	transmission: string;
-	fuel: string;
+	fuelType: string;
 	location: string;
 	image: ResponsiveImageType;
 };
@@ -17,7 +17,7 @@ type CarCardProperties = {
 const carLabelClasses = 'font-bold px-2';
 const carValueClasses = 'border-l-2 border-brand-charcoal px-2 text-center';
 
-const CarCard = ({model, make, image, price, year, capacity, transmission, fuel, location}: CarCardProperties): JSX.Element => (
+const CarCard = ({model, make, image, price, year, capacity, transmission, fuelType, location}: CarCardProperties): JSX.Element => (
 	<article>
 		<div className="border rounded-t-xl p-5">
 			<Heading label={`${year}`} variant="subheading" element="h4"/>
@@ -43,7 +43,7 @@ const CarCard = ({model, make, image, price, year, capacity, transmission, fuel,
 		</div>
 		<div className="grid grid-cols-2 p-2 border-2 border-t-0 border-gray-800">
 			<p className={carLabelClasses}>Fuel</p>
-			<p className={carValueClasses}>{fuel}</p>
+			<p className={carValueClasses}>{fuelType}</p>
 		</div>
 	</article>
 );
