@@ -111,8 +111,8 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => {
 					/>
 				</div>
 				<div className="flex items-end">
-					<Link passHref legacyBehavior href="/models">
-						<Button.Link label="Book now" className="!w-full" onClick={handleSubmit}/>
+					<Link passHref legacyBehavior href="/models#models">
+						<Button.Link label="Select car" className="!w-full" onClick={handleSubmit}/>
 					</Link>
 				</div>
 			</div>

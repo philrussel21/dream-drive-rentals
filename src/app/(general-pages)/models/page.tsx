@@ -1,6 +1,6 @@
 'use client';
 
-import {CarCard, Heading, Select, Text} from '@app/components';
+import {BookingModal, CarCard, Heading, Select, Text} from '@app/components';
 import {Container, Hero, Region} from '@app/components/partials';
 import type {Option} from '@app/components/select';
 import {carMakers, locations, fuelTypes} from '@app/config';
@@ -60,9 +60,10 @@ const generateFilterOptions = (options: string[]): Option[] => [
 
 const VehicleModelsPage = (): JSX.Element => {
 	const [cars, setCars] = useState<Car[]>(carsData);
+	const [selectedCar, setSelectedCar] = useState<Car>();
 	const [filterState, setFilterState] = useState<FilterState>(initialFilterState);
 	const [sortState, setSortState] = useState<SortKey>();
-	const {make, pickUpLocation} = useBookingContext();
+	const {make, pickUpLocation, dropOffDate, dropOffLocation, pickUpDate} = useBookingContext();
 
 	const handleFilterChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
 		const {id, value} = event.target;
@@ -101,6 +102,15 @@ const VehicleModelsPage = (): JSX.Element => {
 
 		return cars;
 	}, [filterState, sortState, cars]);
+
+	const handleSelectCar = useCallback((id: string) => {
+		setSelectedCar(carsData.find(car => car.id === id));
+	}, []);
+
+	const handleClearModal = useCallback(() => {
+		// eslint-disable-next-line unicorn/no-useless-undefined
+		setSelectedCar(undefined);
+	}, []);
 
 	useEffect(() => {
 		if (Object.values(filterState).every(value => !isPopulated(value))) {
@@ -146,7 +156,7 @@ const VehicleModelsPage = (): JSX.Element => {
 							Embark on a journey through an extensive collection of cutting-edge car models that redefine style, performance, and innovation. Your perfect ride awaits – from sleek sedans to powerful SUVs and nimble hybrids. Dive into the details, compare features, and select the car that best suits your lifestyle. Our showroom is your gateway to finding the perfect fusion of technology and design in automotive excellence. Begin your exploration and choose the car that complements your unique preferences and needs.
 						</Text>
 					</div>
-					<div className="flex flex-col gap-8 md:flex-row mt-16">
+					<div id="models" className="flex flex-col gap-8 md:flex-row mt-16">
 						<div className="shrink-0 min-w-[220px]">
 							<div className="bg-black text-brand-off-white rounded-xl px-4 py-6 sticky top-28 space-y-6 shadow-lg">
 								<div className="space-y-6">
@@ -200,6 +210,7 @@ const VehicleModelsPage = (): JSX.Element => {
 											width: 800,
 											aspectRatio: 2,
 										}}
+										onClick={handleSelectCar}
 									/>
 								))}
 							</ul>
@@ -208,6 +219,16 @@ const VehicleModelsPage = (): JSX.Element => {
 							<Heading variant="subheading" element="h3" label="No results found. Please update your filters to try again."/>
 						)}
 					</div>
+					{isPopulated(selectedCar) && (
+						<BookingModal
+							car={selectedCar}
+							pickUpLocation={selectedCar.location}
+							dropOffLocation={isPopulated(dropOffLocation) ? dropOffLocation : selectedCar.location}
+							pickUpDate={pickUpDate}
+							dropOffDate={dropOffDate}
+							onCloseModal={handleClearModal}
+						/>
+					)}
 				</Container>
 			</Region>
 		</div>
