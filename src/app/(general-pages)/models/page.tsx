@@ -64,10 +64,10 @@ const VehicleModelsPage = (): JSX.Element => {
 
 	const handleFilterChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
 		const {id, value} = event.target;
-		setFilterState({
-			...initialFilterState,
+		setFilterState(current => ({
+			...current,
 			[id]: value,
-		});
+		}));
 	}, []);
 
 	const handleSortChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
@@ -101,24 +101,19 @@ const VehicleModelsPage = (): JSX.Element => {
 	}, [filterState, sortState, cars]);
 
 	useEffect(() => {
-		if (isPopulated(filterState.make)) {
-			setCars(filter(carsData, car => car.make === filterState.make));
+		if (Object.values(filterState).every(value => !isPopulated(value))) {
+			setCars(carsData);
 			
 			return;
 		}
 
-		if (isPopulated(filterState.location)) {
-			setCars(filter(carsData, car => car.location === filterState.location));
-			
-			return;
-		}
-
-		if (isPopulated(filterState.fuelType)) {
-			setCars(filter(carsData, car => car.fuel === filterState.fuelType));
-			
-			return;
-		}
-		setCars(carsData);
+		setCars(
+			filter(carsData, (car) =>
+				Object.entries(filterState).every(([key, value]) =>
+					isPopulated(value) ? car[key as keyof Car] === value : true,
+				),
+			),
+		);
 	}, [filterState]);
 	
 	return (
