@@ -4,21 +4,20 @@ import type {Icon} from '@app/library/icons';
 import icons from '@app/library/icons';
 import {notNil} from '@growthops/ext-ts';
 import {isFuture, isToday} from 'date-fns';
-import {useCallback, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import {isNil} from 'remeda';
 
 type DateSelectorProperties = {
   id: string;
   label: string;
   icon: Icon;
+	defaultDate?: Date;
+	onChange?: (date: Date, id: string) => void;
 };
 
-const DateSelector = ({
-	id,
-	label,
-	icon,
-}: DateSelectorProperties): JSX.Element => {
+const DateSelector = ({id, label, icon, defaultDate, onChange}: DateSelectorProperties): JSX.Element => {
 	const [startDate, setStartDate] = useState(new Date());
 	const Icon = useMemo(() => icons[icon], []);
 
@@ -28,7 +27,15 @@ const DateSelector = ({
 
 	const handleDateChange = useCallback((date: Date) => {
 		setStartDate(date);
+		onChange?.(date, id);
 	}, []);
+
+	useEffect(() => {
+		if (isNil(defaultDate)) {
+			return;
+		}
+		setStartDate(defaultDate);
+	}, [defaultDate]);
 
 	return (
 		<div>
