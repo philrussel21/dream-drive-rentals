@@ -5,6 +5,7 @@ import headerLinks from '@app/data/header.json';
 import contactData from '@app/data/contact.json';
 import './globals.css';
 import {Footer} from '@app/components/partials';
+import BookContext from '@app/context/book';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const playfair_display = Playfair_Display({
@@ -28,7 +29,9 @@ const RootLayout = ({children}: {children: React.ReactNode}): JSX.Element => (
 		<body className={`${playfair_display.variable} ${lato.variable}`}>
 			<main className="min-h-screen bg-white text-brand-charcoal font-body">
 				<Header links={headerLinks}/>
-				<div className="pt-20">{children}</div>
+				<BookContext>
+					<div className="pt-20">{children}</div>
+				</BookContext>
 				<Footer
 					email={contactData.contact.email}
 					phone={contactData.contact.phone}
