@@ -16,6 +16,7 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
 					id="car"
 					options={carMakers.map((make) => ({label: make, value: make}))}
 					icon="car"
+					placeholder="Select"
 				/>
 			</div>
 			<div>
@@ -27,6 +28,7 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
 						value: location,
 					}))}
 					icon="location"
+					placeholder="Select"
 				/>
 			</div>
 			<div>
@@ -38,6 +40,7 @@ const BookSection = ({heading}: BookSectionProperties): JSX.Element => (
 						value: location,
 					}))}
 					icon="location"
+					placeholder="Select"
 				/>
 			</div>
 			<div>

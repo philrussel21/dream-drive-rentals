@@ -51,7 +51,7 @@ const Select = forwardRef<HTMLSelectElement, SelectProperties>(({
 					)}
 					<span>{label}</span>
 				</label>
-				<div className="relative mt-1">
+				<div className="relative mt-1 text-brand-charcoal">
 					<ChevronDownIcon className={chevronClasses}/>
 					<select
 						ref={reference}
@@ -59,7 +59,6 @@ const Select = forwardRef<HTMLSelectElement, SelectProperties>(({
 						className="w-full appearance-none px-2 py-2.5 rounded-md"
 						placeholder={placeholder}
 						{...intrinsicSelectProperties}
-						defaultValue=""
 					>
 						{!isNil(placeholder) && (
 							<option disabled value="">{placeholder}</option>
