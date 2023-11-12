@@ -1,83 +1,84 @@
-'use client';
-
+import {forwardRef, useMemo} from 'react';
+import type * as React from 'react';
+import {isNil} from 'remeda';
+import {ChevronDownIcon} from '@heroicons/react/24/solid';
+import {collapse, notNil} from '@growthops/ext-ts';
 import type {Icon} from '@app/library/icons';
 import icons from '@app/library/icons';
-import {notNil} from '@growthops/ext-ts';
-import {useCallback, useMemo} from 'react';
-import ReactSelect from 'react-select';
-import type {ClassNamesConfig} from 'react-select';
-import {isNil, isString} from 'remeda';
 
 type Option = {
-  label: string;
-  value: string;
+	value: string;
+	label: string;
 };
 
-type SelectProperties = {
-  id: string;
-  label: string;
-  options: Option[];
-  icon: Icon;
-	onChange?: (id: string, newValue: string) => void;
-};
+type SelectProperties = React.ComponentPropsWithoutRef<'select'>
+	& {
+		id: string;
+		label: string;
+		error?: string;
+		className?: string;
+		icon: Icon;
+		options: Option[];
+	};
 
-const reactSelectClasses: ClassNamesConfig = {
-	container: () => 'relative',
-	control: () =>
-		'flex items-center flex-wrap justify-between min-h-[38px] relative bg-brand-off-white rounded-md',
-	valueContainer: () => 'py-2.5 px-2',
-	singleValue: () => 'text-brand-charcoal px-0.5',
-	indicatorsContainer: () => 'shrink-0 self-stretch flex items-center',
-	indicatorSeparator: () => 'self-stretch w-px bg-brand-charcoal/20 my-2',
-	dropdownIndicator: () => 'p-2 text-brand-charcoal/20',
-	placeholder: () => 'text-brand-charcoal/50 mx-0.5',
-	menu: () =>
-		'absolute top-full w-full z-10 bg-transparent rounded-md shadow-lg my-2',
-	menuList: () =>
-		'max-h-80 overflow-y-auto relative py-1 bg-brand-charcoal rounded-lg',
-	option: () =>
-		'block w-full p-3 text-brand-off-white hover:bg-brand-gold hover:text-brand-charcoal',
-};
+const chevronClasses = collapse(`
+	absolute
+	top-1/2
+	right-0
+	-translate-y-1/2
+	w-5
+	mx-2
+	text-true-gray-500
+	select-none
+	pointer-events-none
+`);
 
-const Select = ({label, id, options, icon, onChange}: SelectProperties): JSX.Element => {
+const Select = forwardRef<HTMLSelectElement, SelectProperties>(({
+	id, label, options, icon, placeholder, ...intrinsicSelectProperties
+}: SelectProperties, reference) => {
 	const Icon = useMemo(() => icons[icon], []);
 
-	const handleOnSelectChange = useCallback((newValue: unknown) => {
-		const selectedOption = newValue as Option;
-
-		if (isNil(onChange) || isNil(selectedOption.value) || !isString(selectedOption.value)) {
-			return;
-		}
-		onChange(id, selectedOption.value);
-	}, [onChange]);
-	
 	return (
 		<div>
-			<label htmlFor={id} className="flex space-x-2 items-center text-xl">
-				{notNil(Icon) && (
-					<Icon
-						className={
-							icon === 'car' ? 'w-12 h-7' : 'w-7 text-brand-gold stroke-current'
-						}
-					/>
-				)}
-				<span>{label}</span>
+			<label>
+				<label htmlFor={id} className="flex space-x-2 items-center text-xl">
+					{notNil(Icon) && (
+						<Icon
+							className={
+								icon === 'car' ? 'w-12 h-7' : 'w-7 text-brand-gold stroke-current'
+							}
+						/>
+					)}
+					<span>{label}</span>
+				</label>
+				<div className="relative mt-1">
+					<ChevronDownIcon className={chevronClasses}/>
+					<select
+						ref={reference}
+						id={id}
+						className="w-full appearance-none px-2 py-2.5 rounded-md"
+						placeholder={placeholder}
+						{...intrinsicSelectProperties}
+						defaultValue=""
+					>
+						{!isNil(placeholder) && (
+							<option disabled value="">{placeholder}</option>
+						)}
+						{options.map(({value, label}) => (
+							<option key={value} value={value}>{label}</option>
+						))}
+					</select>
+				</div>
 			</label>
-			<ReactSelect
-				unstyled
-				options={options}
-				id={id}
-				className="mt-1"
-				classNames={reactSelectClasses}
-				onChange={handleOnSelectChange}
-			/>
 		</div>
 	);
-};
+});
+
+Select.displayName = 'Select';
 
 export default Select;
 
 export type {
-	SelectProperties as SelectProps,
 	Option,
+	SelectProperties as SelectProps,
 };

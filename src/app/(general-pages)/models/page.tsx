@@ -6,7 +6,8 @@ import type {Option} from '@app/components/select';
 import {carMakers, locations, fuelTypes} from '@app/config';
 import carsData from '@app/data/cars.json';
 import type {Car} from '@app/library/types';
-import {isPopulated} from '@growthops/ext-ts';
+import {isPopulated, notPopulated} from '@growthops/ext-ts';
+import type {ChangeEvent} from 'react';
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import {filter} from 'remeda';
 
@@ -18,9 +19,9 @@ type SortOption = {
 };
 
 type FilterState = {
-	make?: string;
-	location?: string;
-	fuelType?: string;
+	make: string;
+	location: string;
+	fuelType: string;
 };
 
 const sortOptions: SortOption[] = [
@@ -43,9 +44,9 @@ const sortOptions: SortOption[] = [
 ];
 
 const initialFilterState: FilterState = {
-	make: undefined,
-	location: undefined,
-	fuelType: undefined,
+	make: '',
+	location: '',
+	fuelType: '',
 };
 
 const generateFilterOptions = (options: string[]): Option[] => [
@@ -61,15 +62,16 @@ const VehicleModelsPage = (): JSX.Element => {
 	const [filterState, setFilterState] = useState<FilterState>(initialFilterState);
 	const [sortState, setSortState] = useState<SortKey>();
 
-	const handleFilterChange = useCallback((id: string, newValue: string) => {
+	const handleFilterChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
+		const {id, value} = event.target;
 		setFilterState({
 			...initialFilterState,
-			[id]: newValue,
+			[id]: value,
 		});
 	}, []);
 
-	const handleSortChange = useCallback((_id: string, newValue: string) => {
-		setSortState(newValue as SortKey);
+	const handleSortChange = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
+		setSortState(event.target.value as SortKey);
 	}, []);
 
 	const sortedData = useMemo(() => {
@@ -133,6 +135,7 @@ const VehicleModelsPage = (): JSX.Element => {
 									id="make"
 									options={generateFilterOptions(carMakers)}
 									icon="car"
+									value={filterState.make}
 									onChange={handleFilterChange}
 								/>
 								<Select
@@ -140,6 +143,7 @@ const VehicleModelsPage = (): JSX.Element => {
 									id="location"
 									options={generateFilterOptions(locations)}
 									icon="location"
+									value={filterState.location}
 									onChange={handleFilterChange}
 								/>
 								<Select
@@ -147,6 +151,7 @@ const VehicleModelsPage = (): JSX.Element => {
 									id="fuelType"
 									options={generateFilterOptions(fuelTypes)}
 									icon="miles"
+									value={filterState.fuelType}
 									onChange={handleFilterChange}
 								/>
 							</div>
@@ -157,24 +162,30 @@ const VehicleModelsPage = (): JSX.Element => {
 									id="sort"
 									options={sortOptions}
 									icon="trophy"
+									placeholder="Select"
 									onChange={handleSortChange}
 								/>
 							</div>
 						</div>
 					</div>
-					<ul className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-						{sortedData.map(car => (
-							<CarCard
-								key={car.id}
-								{...car}
-								image={{
-									...car.image,
-									width: 800,
-									aspectRatio: 2,
-								}}
-							/>
-						))}
-					</ul>
+					{isPopulated(sortedData) && (
+						<ul className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+							{sortedData.map(car => (
+								<CarCard
+									key={car.id}
+									{...car}
+									image={{
+										...car.image,
+										width: 800,
+										aspectRatio: 2,
+									}}
+								/>
+							))}
+						</ul>
+					)}
+					{notPopulated(sortedData) && (
+						<Heading variant="subheading" element="h3" label="No results found. Please update your filters to try again."/>
+					)}
 				</Container>
 			</Region>
 		</div>
